@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
+import { NAME } from "@/lib/consts";
 
-const NAME = "AZIABAY"
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: NAME, template: `%s | ${NAME}` },
