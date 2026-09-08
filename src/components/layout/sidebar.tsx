@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Button from "@/components/ui/button"
 import Divider from "@/components/ui/divider"
+import TextButton from "@/components/ui/text_button"
 
 export default function Sidebar() {
   return (
@@ -24,9 +25,9 @@ export default function Sidebar() {
 
       <Divider />
 
-      <div className="w-full h-auto mt-auto flex flex-col items-center">
-        <button>How did I make this site?</button>
-      </div>
+      <TextButton className="mt-auto">
+        How did I make this site?
+      </TextButton>
 
       <Image className="w-full h-auto mt-4 pixelated" src="/banner_pillars.png" alt="" width={0} height={0} unoptimized />
     </div>
