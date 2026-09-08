@@ -29,7 +29,7 @@ export default function Sidebar() {
         How did I make this site?
       </TextButton>
 
-      <Image className="w-full h-auto mt-4 pixelated" src="/banner_pillars.png" alt="" width={0} height={0} unoptimized />
+      <Image className="w-full h-auto mt-3 pixelated" src="/banner_pillars.png" alt="" width={0} height={0} unoptimized />
     </div>
   );
 }
