@@ -19,7 +19,7 @@ export default function Sidebar() {
       <div className="w-auto h-auto flex flex-col gap-0.5 items-center">
         <Button src="/button_icon_games.png" alt="placeholder">Games</Button>
         <Button>Blog</Button>
-        <Button>Resume</Button>
+        <Button src="/button_icon_resume.gif" alt="placeholder">Resume</Button>
         <Button src="/button_icon_contact.gif" alt="placeholder">Contact</Button>
       </div>
 
