@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-import { NAME } from "@/lib/consts";
+import { SITE_NAME } from "@/lib/consts";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: NAME, template: `%s | ${NAME}` },
+  title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
   description: ""
 };
 

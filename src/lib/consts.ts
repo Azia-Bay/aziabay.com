@@ -1,1 +1,1 @@
-export const NAME = "AZIABAY"
+export const SITE_NAME = "AZIABAY"
