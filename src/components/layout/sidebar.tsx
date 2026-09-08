@@ -17,10 +17,10 @@ export default function Sidebar() {
       <Divider />
       
       <div className="w-auto h-auto flex flex-col gap-0.5 items-center">
-        <Button src="/button_icon_games.png" alt="T">Games</Button>
+        <Button src="/button_icon_games.png" alt="placeholder">Games</Button>
         <Button>Blog</Button>
         <Button>Resume</Button>
-        <Button>Contact</Button>
+        <Button src="/button_icon_contact.gif" alt="placeholder">Contact</Button>
       </div>
 
       <Divider />
