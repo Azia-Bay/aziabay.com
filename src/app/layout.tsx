@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+
 import "./globals.css";
 
+const NAME = "AZIABAY"
+
 export const metadata: Metadata = {
-  title: "AZIABAY"
+  title: { default: NAME, template: `%s | ${NAME}` },
+  description: ""
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
