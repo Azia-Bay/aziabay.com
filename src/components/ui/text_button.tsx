@@ -1,7 +1,7 @@
 "use client";
 
 type TextButtonProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
 };

@@ -16,8 +16,8 @@ export default function Sidebar() {
       <Divider />
       <Divider />
       
-      <div className="w-32 h-auto flex flex-col gap-0.5 items-center">
-        <Button>Games</Button>
+      <div className="w-auto h-auto flex flex-col gap-0.5 items-center">
+        <Button src="/button_icon_games.png" alt="T">Games</Button>
         <Button>Blog</Button>
         <Button>Resume</Button>
         <Button>Contact</Button>
