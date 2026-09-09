@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Button from "@/components/layout/sidebar/components/sidebar_button"
+import Copyright from "@/components/layout/sidebar/components/sidebar_copyright"
 import Divider from "@/components/layout/sidebar/components/sidebar_divider"
 import TextButton from "@/components/layout/sidebar/components/sidebar_text_button"
 
@@ -24,6 +25,8 @@ export default function Sidebar() {
       </div>
 
       <Divider />
+
+      <Copyright />
 
       <TextButton className="mt-auto">
         How did I make this site?
