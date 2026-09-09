@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { LINK_TO_SITE_SOURCE } from "@/lib/consts";
+
 import Button from "@/components/layout/sidebar/components/sidebar_button"
 import Copyright from "@/components/layout/sidebar/components/sidebar_copyright"
 import Divider from "@/components/layout/sidebar/components/sidebar_divider"
@@ -28,10 +30,15 @@ export default function Sidebar() {
 
       <Copyright />
 
-      <div className="mt-auto">
-        <TextButton>
-          How did I make this site?
-        </TextButton>
+      <div className="mt-auto flex flex-row gap-1">
+        <TextButton>How did I make this site?</TextButton>
+        <div>
+          (
+          <a href={LINK_TO_SITE_SOURCE} target="_blank">
+            <TextButton>source</TextButton>
+          </a>
+          )
+        </div>
       </div>
 
       <Image className="w-full h-auto mt-3 pixelated" src="/banner_pillars.png" alt="" width={0} height={0} unoptimized loading="eager" />
