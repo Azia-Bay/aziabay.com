@@ -16,7 +16,7 @@ export default function Sidebar() {
       <Divider />
       <Divider />
       
-      <div className="w-auto h-auto flex flex-col gap-0.5 items-center">
+      <div className="w-auto h-auto grid grid-cols-2 gap-1">
         <Button src="/button_icon_games.gif" alt="placeholder">Games</Button>
         <Button src="/button_icon_blog.gif" alt="placeholder">Blog</Button>
         <Button src="/button_icon_resume.gif" alt="placeholder">Resume</Button>
