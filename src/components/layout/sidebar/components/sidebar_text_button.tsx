@@ -2,13 +2,12 @@
 
 type TextButtonProps = {
   children?: React.ReactNode;
-  className?: string;
   onClick?: () => void;
 };
 
-export default function SidebarTextButton({ children, className, onClick }: TextButtonProps) {
+export default function SidebarTextButton({ children, onClick }: TextButtonProps) {
   return (
-    <button onClick={onClick} className={`cursor-pointer hover:underline underline-offset-2 ${className}`}>
+    <button onClick={onClick} className="cursor-pointer hover:underline underline-offset-2">
       {children}
     </button>
   )

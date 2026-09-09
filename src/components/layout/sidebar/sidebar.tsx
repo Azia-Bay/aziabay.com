@@ -28,9 +28,11 @@ export default function Sidebar() {
 
       <Copyright />
 
-      <TextButton className="mt-auto">
-        How did I make this site?
-      </TextButton>
+      <div className="mt-auto">
+        <TextButton>
+          How did I make this site?
+        </TextButton>
+      </div>
 
       <Image className="w-full h-auto mt-3 pixelated" src="/banner_pillars.png" alt="" width={0} height={0} unoptimized loading="eager" />
     </div>
