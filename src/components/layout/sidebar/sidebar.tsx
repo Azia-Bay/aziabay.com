@@ -20,10 +20,10 @@ export default function Sidebar() {
       <Divider />
       
       <div className="w-auto h-auto grid grid-cols-2 gap-1">
-        <Button src="/button_icon_games.gif" alt="placeholder">Games</Button>
-        <Button src="/button_icon_blog.gif" alt="placeholder">Blog</Button>
-        <Button src="/button_icon_resume.gif" alt="placeholder">Resume</Button>
-        <Button src="/button_icon_contact.gif" alt="placeholder">Contact</Button>
+        <Button src="/button_icon_games.gif" alt="A 1-bit (black & white) pixel art icon of an old-school arcade joystick. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Games</Button>
+        <Button src="/button_icon_blog.gif" alt="A 1-bit (black & white) pixel art icon of a trumpet. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Blog</Button>
+        <Button src="/button_icon_resume.gif" alt="A 1-bit (black & white) pixel art icon of an anonymous resume. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Resume</Button>
+        <Button src="/button_icon_contact.gif" alt="A 1-bit (black & white) pixel art icon of an elegantly-sealed letter. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Contact</Button>
       </div>
 
       <Divider />
