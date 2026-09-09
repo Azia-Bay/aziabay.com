@@ -15,15 +15,15 @@ export default function SidebarButton({ children, onClick, src, alt }: ButtonPro
   var pr = (src && alt && "pr-4") || ""
   
   return (
-    <button onClick={onClick} className={`group relative overflow-hidden cursor-pointer w-full px-2 py-1 ${pr} rounded-lg border-4 border-black border-double flex flex-row items-center gap-3 bg-white text-black text-lg font-bold uppercase`}>
-      <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(black_0%_25%,white_25%_50%)]" />
+    <button onClick={onClick} className={`group relative overflow-hidden cursor-pointer w-full px-2 py-1 ${pr} rounded-lg border-4 border-background border-double flex flex-row items-center gap-3 bg-foreground text-background text-lg font-bold uppercase`}>
+      <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--background)_0%_25%,var(--foreground)_25%_50%)]" />
 
       {src && alt && <Image src={src} alt={alt} className="z-10 pixelated" width={ICON_SIZE} height={ICON_SIZE} unoptimized loading="eager" />}
 
       <span className="group relative z-10 mx-auto">
         {children}
 
-        <span className="absolute left-0 bottom-1 w-full h-px bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+        <span className="absolute left-0 bottom-1 w-full h-px bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
       </span>
     </button>
   )
