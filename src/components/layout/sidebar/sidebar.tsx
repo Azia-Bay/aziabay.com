@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import Button from "@/components/ui/button"
-import Divider from "@/components/ui/divider"
-import TextButton from "@/components/ui/text_button"
+import Button from "@/components/layout/sidebar/components/button"
+import Divider from "@/components/layout/sidebar/components/divider"
+import TextButton from "@/components/layout/sidebar/components/text_button"
 
 export default function Sidebar() {
   return (

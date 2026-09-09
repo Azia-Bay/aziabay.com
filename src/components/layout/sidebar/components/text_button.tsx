@@ -6,7 +6,7 @@ type TextButtonProps = {
   onClick?: () => void;
 };
 
-export default function TextButton({ children, className, onClick }: TextButtonProps) {
+export default function SidebarTextButton({ children, className, onClick }: TextButtonProps) {
   return (
     <button onClick={onClick} className={`cursor-pointer hover:underline underline-offset-2 ${className}`}>
       {children}

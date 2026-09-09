@@ -12,7 +12,7 @@ type ButtonProps = {
   alt?: string;
 };
 
-export default function Button({ children, className, onClick, src, alt }: ButtonProps) {
+export default function SidebarButton({ children, className, onClick, src, alt }: ButtonProps) {
   var pr = (src && alt && "pr-4") || ""
   
   return (
