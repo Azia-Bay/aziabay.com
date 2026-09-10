@@ -20,6 +20,33 @@ type SidebarProps = {
 };
 
 export default function Sidebar({ onTabChange }: SidebarProps) {
+  const BUTTONS: { id: Tab; src: string; alt: string; label: string }[] = [
+    {
+      id: "games",
+      src: "sidebar/button_icon_games.gif",
+      alt: "A 1-bit (black & white) pixel art icon of an old-school arcade joystick. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.",
+      label: "Games"
+    },
+    {
+      id: "blog",
+      src: "sidebar/button_icon_blog.gif",
+      alt: "A 1-bit (black & white) pixel art icon of a trumpet. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.",
+      label: "Blog"
+    },
+    {
+      id: "resume",
+      src: "sidebar/button_icon_resume.gif",
+      alt: "A 1-bit (black & white) pixel art icon of an anonymous resume. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.",
+      label: "Resume"
+    },
+    {
+      id: "contact",
+      src: "sidebar/button_icon_contact.gif",
+      alt: "A 1-bit (black & white) pixel art icon of an elegantly-sealed letter. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.",
+      label: "Contact"
+    },
+  ];
+
   return (
     <div className="w-1/3 h-screen p-4 pb-0 flex flex-col items-center gap-4">
       <Image className="w-full h-auto pixelated" src="sidebar/banner_arms.png" alt="" width={0} height={0} unoptimized loading="eager" />
@@ -41,13 +68,11 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
       <Divider />
       
       <nav className="w-auto h-auto grid grid-cols-2 gap-1">
-        <Button onClick={() => onTabChange("games")} src="sidebar/button_icon_games.gif" alt="A 1-bit (black & white) pixel art icon of an old-school arcade joystick. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Games</Button>
-
-        <Button onClick={() => onTabChange("blog")} src="sidebar/button_icon_blog.gif" alt="A 1-bit (black & white) pixel art icon of a trumpet. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Blog</Button>
-
-        <Button onClick={() => onTabChange("resume")} src="sidebar/button_icon_resume.gif" alt="A 1-bit (black & white) pixel art icon of an anonymous resume. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Resume</Button>
-
-        <Button onClick={() => onTabChange("contact")} src="sidebar/button_icon_contact.gif" alt="A 1-bit (black & white) pixel art icon of an elegantly-sealed letter. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Contact</Button>
+        {BUTTONS.map((button) => (
+          <Button key={button.id} onClick={() => onTabChange(button.id)} src={button.src} alt={button.alt}>
+            {button.label}
+          </Button>
+        ))}
       </nav>
 
       <Divider />
