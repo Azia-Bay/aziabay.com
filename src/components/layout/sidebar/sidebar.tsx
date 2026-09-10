@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-import { LINK_TO_SITE_SOURCE } from "@/lib/consts";
+import {
+  LINK_TO_GITHUB,
+  LINK_TO_LINKEDIN,
+  LINK_TO_ITCHIO,
+  LINK_TO_SITE_SOURCE
+} from "@/lib/consts";
 
 import Button from "@/components/layout/sidebar/components/sidebar_button"
 import Copyright from "@/components/layout/sidebar/components/sidebar_copyright"
@@ -17,6 +22,19 @@ export default function Sidebar() {
       <Image className="cursor-pointer w-2/3 h-auto pixelated" src="sidebar/headshot.gif" alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses." width={0} height={0} unoptimized loading="eager" />
 
       <Divider />
+
+      <div className="w-auto h-auto flex flex-row gap-1">
+        <a href={LINK_TO_LINKEDIN} target="_blank">
+          <Button src="sidebar/button_icon_linkedin.png" alt="A 1-bit (black & white) pixel art icon of the LinkedIn logo, with a shadow underneath adding three-dimensionality." />
+        </a>
+        <a href={LINK_TO_GITHUB} target="_blank">
+          <Button />
+        </a>
+        <a href={LINK_TO_ITCHIO} target="_blank">
+          <Button />
+        </a>
+      </div>
+
       <Divider />
       
       <div className="w-auto h-auto grid grid-cols-2 gap-1">
