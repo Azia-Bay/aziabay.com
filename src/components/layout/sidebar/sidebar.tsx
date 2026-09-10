@@ -33,7 +33,7 @@ export default function Sidebar() {
         </a>
 
         <a href={LINK_TO_ITCHIO} target="_blank">
-          <Button />
+          <Button src="sidebar/button_icon_itchio.png" alt="A 1-bit (black & white) pixel art icon of the itch.io logo, with a shadow underneath adding three-dimensionality." />
         </a>
       </div>
 
