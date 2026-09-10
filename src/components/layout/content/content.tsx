@@ -10,7 +10,7 @@ type ContentProps = {
 export default function Content({ tab, onTabChange }: ContentProps) {
   return (
     <div className="flex-1 p-15 flex flex-col">
-      <Tabs />
+      <Tabs onTabChange={onTabChange} />
 
       <div className="flex-1 p-5 rounded-lg border-4 border-foreground border-double">
         {tab === "games" && <div>Games</div>}
