@@ -31,5 +31,5 @@ export default function SidebarButton({ children, onClick, src, alt }: ButtonPro
         </span>
       }
     </button>
-  )
+  );
 }
