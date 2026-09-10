@@ -6,7 +6,7 @@ export default function Content() {
       <Tabs />
 
       <div className="flex-1 p-5 rounded-lg border-4 border-foreground border-double">
-        Content
+        { /* IF CONDITION to display Games / Blog / Resume / Contact panel */ }
       </div>
     </div>
   )
