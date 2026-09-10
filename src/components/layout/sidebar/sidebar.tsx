@@ -57,9 +57,7 @@ export default function Sidebar() {
         <TextButton>How did I make this site?</TextButton>
         <div>
           (
-          <a href={LINK_TO_SITE_SOURCE} target="_blank">
-            <TextButton>source</TextButton>
-          </a>
+          <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source</TextButton>
           )
         </div>
       </div>
