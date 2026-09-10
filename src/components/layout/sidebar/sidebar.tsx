@@ -7,6 +7,7 @@ import {
   LINK_TO_SITE_SOURCE
 } from "@/lib/consts";
 
+import About from "@/components/layout/sidebar/components/sidebar_about"
 import Button from "@/components/layout/sidebar/components/sidebar_button"
 import Copyright from "@/components/layout/sidebar/components/sidebar_copyright"
 import Divider from "@/components/layout/sidebar/components/sidebar_divider"
@@ -31,6 +32,8 @@ export default function Sidebar() {
         <Button href={LINK_TO_ITCHIO} target="_blank" src="sidebar/button_icon_itchio.png" alt="A 1-bit (black & white) pixel art icon of the itch.io logo, with a shadow underneath adding three-dimensionality." />
       </div>
 
+      <About />
+      
       <Divider />
       
       <div className="w-auto h-auto grid grid-cols-2 gap-1">
