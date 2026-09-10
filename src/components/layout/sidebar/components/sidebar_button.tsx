@@ -26,7 +26,7 @@ export default function SidebarButton({ children, href, target, onClick, src, al
       }
 
       {children &&
-        <span className="group relative z-10 mx-auto">
+        <span className="relative z-10 mx-auto">
           {children}
 
           <span className="absolute left-0 bottom-1 w-full h-px bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />

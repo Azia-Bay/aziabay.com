@@ -11,7 +11,7 @@ export default function ContentTab({ children, onClick }: ContentTabProps) {
       <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[1px_1px] bg-[repeating-conic-gradient(var(--background)_0%_25%,var(--foreground)_25%_50%)]" />
 
       {children &&
-        <span className="group relative z-10">
+        <span className="relative z-10">
           {children}
 
           <span className="absolute left-0 bottom-0 w-full h-px bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />

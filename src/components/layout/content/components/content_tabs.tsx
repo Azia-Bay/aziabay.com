@@ -22,11 +22,11 @@ export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
   const orderedTabs = [tab, ...TABS.filter((t) => t !== tab)];
 
   return (
-    <nav className="self-end px-4 flex flex-row gap-1">
-      {orderedTabs.map((tab) => (
-        <motion.div key={tab} layout transition={{ type: "spring", stiffness: 400, damping: 35 }}>
-          <ContentTab onClick={() => onTabChange(tab)}>
-            {LABELS[tab]}
+    <nav className="px-4 flex flex-row gap-1">
+      {orderedTabs.map((t) => (
+        <motion.div key={t} className={t === tab ? "mr-auto" : "" } layout transition={{ type: "spring", stiffness: 350, damping: 30 }}>
+          <ContentTab onClick={() => onTabChange(t)}>
+            {LABELS[t]}
           </ContentTab>
         </motion.div>
       ))}
