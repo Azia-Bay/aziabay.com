@@ -27,9 +27,11 @@ export default function Sidebar() {
         <a href={LINK_TO_LINKEDIN} target="_blank">
           <Button src="sidebar/button_icon_linkedin.png" alt="A 1-bit (black & white) pixel art icon of the LinkedIn logo, with a shadow underneath adding three-dimensionality." />
         </a>
+
         <a href={LINK_TO_GITHUB} target="_blank">
-          <Button />
+          <Button src="sidebar/button_icon_github.png" alt="A 1-bit (black & white) pixel art icon of the GitHub logo, with a shadow underneath adding three-dimensionality." />
         </a>
+
         <a href={LINK_TO_ITCHIO} target="_blank">
           <Button />
         </a>
@@ -39,8 +41,11 @@ export default function Sidebar() {
       
       <div className="w-auto h-auto grid grid-cols-2 gap-1">
         <Button src="sidebar/button_icon_games.gif" alt="A 1-bit (black & white) pixel art icon of an old-school arcade joystick. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Games</Button>
+
         <Button src="sidebar/button_icon_blog.gif" alt="A 1-bit (black & white) pixel art icon of a trumpet. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Blog</Button>
+
         <Button src="sidebar/button_icon_resume.gif" alt="A 1-bit (black & white) pixel art icon of an anonymous resume. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Resume</Button>
+
         <Button src="sidebar/button_icon_contact.gif" alt="A 1-bit (black & white) pixel art icon of an elegantly-sealed letter. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality.">Contact</Button>
       </div>
 
