@@ -24,17 +24,11 @@ export default function Sidebar() {
       <Divider />
 
       <div className="w-auto h-auto flex flex-row gap-1">
-        <a href={LINK_TO_LINKEDIN} target="_blank">
-          <Button src="sidebar/button_icon_linkedin.png" alt="A 1-bit (black & white) pixel art icon of the LinkedIn logo, with a shadow underneath adding three-dimensionality." />
-        </a>
+        <Button href={LINK_TO_LINKEDIN} target="_blank" src="sidebar/button_icon_linkedin.png" alt="A 1-bit (black & white) pixel art icon of the LinkedIn logo, with a shadow underneath adding three-dimensionality." />
 
-        <a href={LINK_TO_GITHUB} target="_blank">
-          <Button src="sidebar/button_icon_github.png" alt="A 1-bit (black & white) pixel art icon of the GitHub logo, with a shadow underneath adding three-dimensionality." />
-        </a>
+        <Button href={LINK_TO_GITHUB} target="_blank" src="sidebar/button_icon_github.png" alt="A 1-bit (black & white) pixel art icon of the GitHub logo, with a shadow underneath adding three-dimensionality." />
 
-        <a href={LINK_TO_ITCHIO} target="_blank">
-          <Button src="sidebar/button_icon_itchio.png" alt="A 1-bit (black & white) pixel art icon of the itch.io logo, with a shadow underneath adding three-dimensionality." />
-        </a>
+        <Button href={LINK_TO_ITCHIO} target="_blank" src="sidebar/button_icon_itchio.png" alt="A 1-bit (black & white) pixel art icon of the itch.io logo, with a shadow underneath adding three-dimensionality." />
       </div>
 
       <Divider />
