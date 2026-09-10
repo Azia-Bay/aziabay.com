@@ -50,11 +50,8 @@ export default function Sidebar() {
 
       <div className="mt-auto flex flex-row gap-1">
         <TextButton>How did I make this site?</TextButton>
-        <div>
-          (
-          <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source code</TextButton>
-          )
-        </div>
+        //
+        <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source code</TextButton>
       </div>
 
       <Image className="w-full h-auto pixelated" src="sidebar/banner_pillars.png" alt="" width={0} height={0} unoptimized loading="eager" />
