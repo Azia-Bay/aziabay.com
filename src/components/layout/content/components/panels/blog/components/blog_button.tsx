@@ -23,7 +23,11 @@ export default function BlogButton({onClick, date, title, tagline, wordCount, vi
   return (
     <button onClick={onClick} className="group relative cursor-pointer flex flex-row">
       <div className="min-w-1/2 mr-auto px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-background border-double bg-foreground text-background flex flex-col items-start">
-        <div className="text-sm">(calendar icon) {year}/{month}/{day}</div>
+        <div className="flex flex-row items-center gap-1 text-sm">
+          <Image className="w-auto h-[1em]" src="/content/panels/blog/button_icon_calendar.png" alt="" width={0} height={0} unoptimized />
+
+          <div>{year}/{month}/{day}</div>
+        </div>
 
         <div className="text-lg font-bold uppercase">{title}</div>
 
