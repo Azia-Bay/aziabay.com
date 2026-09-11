@@ -42,7 +42,9 @@ export default function BlogButton({onClick, date, title, tagline, wordCount, vi
         </div>
       </div>
       
-      <Image className="flex-1 rounded-lg rounded-l-none pixelated" src={src} alt={alt} width={0} height={0} unoptimized />
+      <div className="relative flex-1 overflow-hidden rounded-lg rounded-l-none">
+        <Image className="object-cover pixelated" src={src} alt={alt} fill unoptimized />
+      </div>
     </button>
   );
 }
