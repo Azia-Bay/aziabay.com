@@ -21,23 +21,25 @@ export default function BlogButton({onClick, date, title, tagline, wordCount, vi
   var min = Math.ceil(wordCount / AVG_NONFICTION_WORDS_PER_MIN);
 
   return (
-    <button onClick={onClick} className="group relative cursor-pointer flex flex-row">
-      <div className="min-w-1/2 mr-auto px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-background border-double bg-foreground text-background flex flex-col items-start">
-        <div className="flex flex-row items-center gap-1 text-sm">
+    <button onClick={onClick} className="group relative overflow-hidden cursor-pointer flex flex-row">
+      <div className="relative min-w-1/2 mr-auto px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-background border-double bg-foreground text-background flex flex-col items-start">
+        <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--background)_0%_25%,var(--foreground)_25%_50%)]" />
+
+        <div className="z-10 flex flex-row items-center gap-1 text-sm">
           <Image className="w-auto h-[1em]" src="/content/panels/blog/button_icon_calendar.png" alt="" width={0} height={0} unoptimized />
 
           <div>{year}/{month}/{day}</div>
         </div>
 
-        <div className="relative">
+        <div className="relative z-10">
           <div className="text-lg font-bold uppercase">{title}</div>
 
           <span className="absolute origin-left left-0 bottom-0.5 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
         </div>
 
-        <div>{tagline}</div>
+        <div className="z-10">{tagline}</div>
 
-        <div className="mt-auto text-sm flex flex-row gap-1">
+        <div className="z-10 mt-auto text-sm flex flex-row gap-1">
           <div>{min} min. read</div>
           <div>//</div>
           <div>{wordCount} words</div>
