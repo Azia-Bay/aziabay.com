@@ -29,7 +29,11 @@ export default function BlogButton({onClick, date, title, tagline, wordCount, vi
           <div>{year}/{month}/{day}</div>
         </div>
 
-        <div className="text-lg font-bold uppercase">{title}</div>
+        <div className="relative">
+          <div className="text-lg font-bold uppercase">{title}</div>
+
+          <span className="absolute origin-left left-0 bottom-0.5 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+        </div>
 
         <div>{tagline}</div>
 
