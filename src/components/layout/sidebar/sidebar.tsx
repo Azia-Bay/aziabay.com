@@ -22,7 +22,7 @@ type SidebarProps = {
 export default function Sidebar({ onTabChange }: SidebarProps) {
   return (
     <div className="w-1/3 h-screen p-4 pb-0 flex flex-col items-center gap-4">
-      <Image className="cursor-pointer w-2/3 h-auto pixelated" src="sidebar/headshot.gif" alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses." width={0} height={0} unoptimized loading="eager" />
+      <Image className="cursor-pointer w-2/3 mt-auto h-auto rounded-lg border-4 border-foreground border-double pixelated" src="sidebar/headshot.gif" alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses." width={0} height={0} unoptimized loading="eager" />
 
       <Divider />
 
