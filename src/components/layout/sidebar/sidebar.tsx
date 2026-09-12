@@ -3,17 +3,16 @@ import { Tab } from "@/lib/types"
 import {
   LINK_TO_GITHUB,
   LINK_TO_LINKEDIN,
-  LINK_TO_ITCHIO,
-  LINK_TO_SITE_SOURCE
+  LINK_TO_ITCHIO
 } from "@/lib/consts";
 
 import About from "@/components/layout/sidebar/components/sidebar_about"
 import Button from "@/components/layout/sidebar/components/sidebar_button"
 import Copyright from "@/components/layout/sidebar/components/sidebar_copyright"
+import Details from "@/components/layout/sidebar/components/sidebar_details"
 import Divider from "@/components/layout/sidebar/components/sidebar_divider"
 import Footer from "@/components/layout/sidebar/components/sidebar_footer"
 import Header from "@/components/layout/sidebar/components/sidebar_header"
-import TextButton from "@/components/layout/sidebar/components/sidebar_text_button"
 
 type SidebarProps = {
   onTabChange: (tab: Tab) => void;
@@ -23,7 +22,6 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
   return (
     <div className="w-1/3 h-screen p-4 pb-0 flex flex-col items-center gap-4">
       <Header />
-
       <Divider />
 
       <div className="w-auto h-auto flex flex-row gap-1">
@@ -35,7 +33,6 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
       </div>
 
       <About />
-
       <Divider />
       
       <nav className="w-auto h-auto grid grid-cols-2 gap-1">
@@ -49,15 +46,8 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
       </nav>
 
       <Divider />
-
       <Copyright />
-
-      <div className="mt-auto flex flex-row gap-1">
-        <TextButton onClick={() => { onTabChange("blog_page_aziabay") }}>How did I make this site?</TextButton>
-        //
-        <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source code</TextButton>
-      </div>
-
+      <Details onTabChange={onTabChange} />
       <Footer />
     </div>
   );
