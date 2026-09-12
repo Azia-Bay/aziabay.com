@@ -37,7 +37,7 @@ export default function GamesButton({ onClick, state, date, title, tagline, src,
         <div className="z-10 text-start">{tagline}</div>
       </div>
       
-      <div className="relative flex-1 overflow-hidden rounded-lg rounded-l-none">
+      <div className="relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
         <Image className="object-cover pixelated" src={src} alt={alt} fill unoptimized />
       </div>
     </button>
