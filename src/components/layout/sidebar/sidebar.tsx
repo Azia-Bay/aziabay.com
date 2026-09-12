@@ -53,7 +53,7 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
       <Copyright />
 
       <div className="mt-auto flex flex-row gap-1">
-        <TextButton>How did I make this site?</TextButton>
+        <TextButton onClick={() => { onTabChange("blog_page_aziabay") }}>How did I make this site?</TextButton>
         //
         <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source code</TextButton>
       </div>
