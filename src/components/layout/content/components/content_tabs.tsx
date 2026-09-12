@@ -17,7 +17,7 @@ export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
     blog: "Blog",
     resume: "Resume",
     contact: "Contact",
-    "blog_page_aziabay": "Devlog: The Creation of aziabay.com"
+    blog_page_aziabay: "Devlog: The Creation of aziabay.com"
   };
 
   const orderedTabs = [tab, ...TABS.filter((t) => t !== tab)];
