@@ -6,7 +6,7 @@ export default function SidebarHeader() {
       <div className="px-4 flex flex-row">
         <a href="/">
           <button className="group relative overflow-hidden cursor-pointer flex flex-row">
-            <Image className="w-auto h-auto px-2 py-0.5 rounded-lg rounded-r-none rounded-b-none border-t-4 border-l-4 border-foreground border-double pixelated" src="/icon.png" alt="" width={0} height={0} unoptimized loading="eager" />
+            <Image className="w-auto h-auto px-2 py-0.5 rounded-lg rounded-r-none rounded-b-none border-t-4 border-l-4 border-foreground border-double pixelated" src="/icon.png" alt="A 1-bit (black & white) pixel art icon of an eye, wide-open. The site logo." width={0} height={0} unoptimized loading="eager" />
 
             <div className="relative px-4 py-1 rounded-lg rounded-l-none rounded-b-none border-t-4 border-r-4 border-background border-double bg-foreground">
               <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[1px_1px] bg-[repeating-conic-gradient(var(--background)_0%_25%,var(--foreground)_25%_50%)]" />
