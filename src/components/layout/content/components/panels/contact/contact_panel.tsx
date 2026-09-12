@@ -2,12 +2,17 @@
 
 import Image from "next/image";
 
+import Divider from "@/components/layout/content/components/panels/contact/components/contact_divider"
+
 export default function ContactPanel() {
   return (
-    <div className="scrollbar scroll-smooth overflow-y-auto flex-1 h-full flex flex-col gap-12 items-center">
-      <Image className="w-full h-auto max-w-125 pixelated" src="content/panels/contact/banner_arms.png" alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's." width={0} height={0} unoptimized />
+    <div className="scrollbar scroll-smooth overflow-y-auto flex-1 h-full flex flex-col gap-4 items-center">
+      <Image className="w-full h-auto max-w-125 m-4 pixelated" src="content/panels/contact/banner_arms.png" alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's." width={0} height={0} unoptimized />
+      
+      <Divider />
+      <Divider />
 
-      <form onSubmit={(e) => { e.preventDefault(); }} className="min-w-100 flex flex-col gap-4">
+      <form onSubmit={(e) => { e.preventDefault(); }} className="w-100 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <input name="name" type="text" placeholder="Name" required className="px-2 py-1 rounded-lg border-4 border-background border-double bg-foreground text-background" />
 
