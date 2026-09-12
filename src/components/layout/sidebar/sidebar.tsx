@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { Tab } from "@/lib/types"
 
 import {
@@ -13,6 +11,7 @@ import About from "@/components/layout/sidebar/components/sidebar_about"
 import Button from "@/components/layout/sidebar/components/sidebar_button"
 import Copyright from "@/components/layout/sidebar/components/sidebar_copyright"
 import Divider from "@/components/layout/sidebar/components/sidebar_divider"
+import Footer from "@/components/layout/sidebar/components/sidebar_footer"
 import Header from "@/components/layout/sidebar/components/sidebar_header"
 import TextButton from "@/components/layout/sidebar/components/sidebar_text_button"
 
@@ -59,7 +58,7 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
         <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source code</TextButton>
       </div>
 
-      <Image className="w-full h-auto pixelated" src="sidebar/banner_pillars.png" alt="A 1-bit (black & white) pixel art banner of four pillars resembling ionic columns from traditional Greek architecture. The pillars are ornately detailed with juts and grooves and spiral ornaments, appear to infinitely extend below the bounds of the site, and give the impression of reinforcing the site from the earth underneath." width={0} height={0} unoptimized loading="eager" />
+      <Footer />
     </div>
   );
 }
