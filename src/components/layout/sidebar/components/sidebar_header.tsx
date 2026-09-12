@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SidebarHeader() {
   return (
-    <div className="w-2/3 mt-11 flex flex-col">
+    <div className="w-2/3 mt-6 flex flex-col">
       <div className="px-4 flex flex-row">
         <a href="/">
           <button className="group relative overflow-hidden cursor-pointer flex flex-row">

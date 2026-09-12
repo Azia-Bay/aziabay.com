@@ -17,6 +17,9 @@ export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
     blog: "Blog",
     resume: "Resume",
     contact: "Contact",
+
+    games_page_bruit: "Bruit",
+
     blog_page_aziabay: "Devlog: The Creation of aziabay.com"
   };
 
