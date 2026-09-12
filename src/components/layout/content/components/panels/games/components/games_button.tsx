@@ -38,7 +38,7 @@ export default function GamesButton({ onClick, state, date, title, tagline, src,
       </div>
       
       <div className="relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
-        <Image className="object-cover pixelated" src={src} alt={alt} fill unoptimized />
+        <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto max-w-none pixelated" src={src} alt={alt} width={0} height={0} unoptimized />
       </div>
     </button>
   );
