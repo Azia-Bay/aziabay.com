@@ -8,17 +8,18 @@ type GamesButtonProps = {
   date?: Date;
   title: string;
   tagline: string;
+  genres: string[];
   src: string;
   alt: string;
 };
 
-export default function GamesButton({ onClick, state, date, title, tagline, src, alt }: GamesButtonProps) {
+export default function GamesButton({ onClick, state, date, title, genres, tagline, src, alt }: GamesButtonProps) {
   const year = date?.getFullYear();
   const month = String((date?.getMonth() || 0) + 1).padStart(2, "0");
   const day = String(date?.getDate()).padStart(2, "0");
 
   return (
-    <button onClick={onClick} className="group relative overflow-hidden cursor-pointer shrink-0 min-h-31.25 flex flex-row">
+    <button onClick={onClick} className="group relative overflow-hidden cursor-pointer shrink-0 min-h-44 flex flex-row">
       <div className="relative overflow-hidden w-125 px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-background border-double bg-foreground text-background flex flex-col items-start">
         <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--background)_0%_25%,var(--foreground)_25%_50%)]" />
         
@@ -35,6 +36,16 @@ export default function GamesButton({ onClick, state, date, title, tagline, src,
         </div>
 
         <div className="z-10 text-start">{tagline}</div>
+
+        <div className="z-10 mt-auto text-sm flex flex-row gap-1">
+          {genres.map((genre, index) => (
+            <div key={genre} className="flex flex-row gap-1">
+              {genre}
+              
+              {(index !== (genres.length - 1)) && <div>//</div>}
+            </div>
+          ))}
+        </div>
       </div>
       
       <div className="relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
