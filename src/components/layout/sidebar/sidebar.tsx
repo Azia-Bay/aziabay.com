@@ -15,7 +15,7 @@ type SidebarProps = {
 
 export default function Sidebar({ onTabChange }: SidebarProps) {
   return (
-    <div className="w-1/3 h-screen p-4 pb-0 flex flex-col items-center gap-4">
+    <div className="w-125 h-screen p-4 pb-0 flex flex-col items-center gap-4">
       <Header />
       <Divider />
       <Socials />
