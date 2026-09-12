@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div>
-      <main className="w-screen h-screen flex flex-row">
+      <div className="w-screen h-screen flex flex-row">
         <Sidebar onTabChange={setTeb} />
 
         <div className="flex-1 flex flex-col">
@@ -21,7 +21,7 @@ export default function Home() {
 
           <Socials />
         </div>
-      </main>
+      </div>
     </div>
   );
 }
