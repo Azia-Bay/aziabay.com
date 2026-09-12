@@ -1,5 +1,3 @@
-import { Tab } from "@/lib/types"
-
 import {
   LINK_TO_GITHUB,
   LINK_TO_LINKEDIN,
@@ -7,10 +5,6 @@ import {
 } from "@/lib/consts";
 
 import Button from "@/components/layout/sidebar/components/sidebar_button"
-
-type SidebarSocialsProps = {
-  onTabChange: (tab: Tab) => void;
-};
 
 export default function SidebarSocialsProps() {
   return (
