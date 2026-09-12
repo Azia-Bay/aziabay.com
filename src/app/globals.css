@@ -17,6 +17,11 @@ body {
   color: var(--foreground);
 }
 
+input::placeholder, textarea::placeholder {
+  color: var(--background);
+  opacity: 1;
+}
+
 .cursor-pointer {
   cursor: url('/cursor_pointer.png') 0 3, pointer;
 }
