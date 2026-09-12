@@ -16,7 +16,7 @@ export default function Content({ tab, onTabChange }: ContentProps) {
     <div className="flex-1 p-15 flex flex-col">
       <Tabs tab={tab} onTabChange={onTabChange} />
 
-      <div className="flex-1 p-5 rounded-lg border-4 border-foreground border-double">
+      <div className="flex-1 h-full p-5 rounded-lg border-4 border-foreground border-double">
         {tab === "games" && <GamesPanel />}
         {tab === "blog" && <BlogPanel />}
         {tab === "resume" && <ResumePanel />}

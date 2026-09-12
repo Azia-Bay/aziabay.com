@@ -21,6 +21,25 @@ body {
   cursor: url('/cursor_pointer.png') 0 3, pointer;
 }
 
+.scrollbar::-webkit-scrollbar {
+  width: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border: 2px solid var(--background);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollbar {
+    scrollbar-color: var(--foreground) var(--background);
+  }
+}
+
 .pixelated {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
