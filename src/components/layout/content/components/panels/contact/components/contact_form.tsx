@@ -8,7 +8,7 @@ export default function ContactForm() {
 
         <input name="email" type="email" placeholder="Email address" required className="px-2 py-1 rounded-lg border-4 border-background border-double bg-foreground text-background" />
         
-        <textarea name="message" placeholder="Message" required rows={5} className="px-2 py-1 rounded-lg border-4 border-background border-double bg-foreground text-background" />
+        <textarea name="message" placeholder="Message" required className="px-2 py-1 rounded-lg border-4 border-background border-double bg-foreground text-background" />
       </div>
 
       <button type="submit" className="group relative overflow-hidden cursor-pointer mx-auto px-6 py-2 rounded-lg border-4 border-foreground border-double bg-background">
