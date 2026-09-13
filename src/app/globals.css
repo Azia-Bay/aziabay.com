@@ -30,6 +30,10 @@ textarea {
   cursor: url('/cursor_pointer.png') 0 3, pointer;
 }
 
+.cursor-text {
+  cursor: url('/cursor_text.png') 0 3, text;
+}
+
 .scrollbar::-webkit-scrollbar {
   width: 16px;
 }
