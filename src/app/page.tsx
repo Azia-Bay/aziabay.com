@@ -3,13 +3,14 @@
 import { useState } from "react";
 
 import { Tab } from "@/lib/types"
+import { DEFAULT_TAB } from "@/lib/consts"
 
 import Sidebar from "@/components/layout/sidebar/sidebar"
 import Content from "@/components/layout/content/content"
 import Socials from "@/components/layout/socials/socials"
 
 export default function Home() {
-  const [tab, setTeb] = useState<Tab>("games");
+  const [tab, setTeb] = useState<Tab>(DEFAULT_TAB);
 
   return (
     <div>
