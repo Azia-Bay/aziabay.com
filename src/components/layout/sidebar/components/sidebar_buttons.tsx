@@ -1,6 +1,6 @@
 import { Tab } from "@/lib/types"
 
-import Button from "@/components/layout/sidebar/components/sidebar_button"
+import Button from "@/components/ui/button"
 
 type SidebarButtonsProps = {
   onTabChange: (tab: Tab) => void;

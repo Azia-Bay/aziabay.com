@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-type SidebarButtonProps = {
+type ButtonProps = {
   children?: React.ReactNode;
   href?: string;
   target?: string;
@@ -11,7 +11,7 @@ type SidebarButtonProps = {
   alt?: string;
 };
 
-export default function SidebarButton({ children, href, target, onClick, src, alt }: SidebarButtonProps) {
+export default function Button({ children, href, target, onClick, src, alt }: ButtonProps) {
   var px = (src && alt && children && "px-2") || "px-1"
   var pr = (src && alt && children && "pr-4") || ""
   

@@ -4,7 +4,7 @@ import {
   LINK_TO_ITCHIO
 } from "@/lib/consts";
 
-import Button from "@/components/layout/sidebar/components/sidebar_button"
+import Button from "@/components/ui/button"
 
 export default function Socials() {
   return (
