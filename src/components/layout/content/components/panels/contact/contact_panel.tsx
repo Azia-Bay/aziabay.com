@@ -1,11 +1,9 @@
 "use client"
 
-import { SOCIALS } from "@/lib/consts";
-
 import Image from "next/image";
 
-import Button from "@/components/ui/button"
 import Divider from "@/components/layout/content/components/panels/contact/components/contact_divider"
+import Socials from "@/components/layout/content/components/panels/contact/components/contact_socials"
 
 export default function ContactPanel() {
   return (
@@ -13,13 +11,7 @@ export default function ContactPanel() {
       <Image className="w-full h-auto max-w-125 m-4 pixelated" src="content/panels/contact/banner_arms.png" alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's." width={0} height={0} unoptimized />
       
       <Divider />
-
-      <div className="w-auto h-auto flex flex-row justify-center gap-1">
-        {SOCIALS.map((social) => (
-          <Button key={social.href} href={social.href} target="_blank" src={social.src} alt={social.alt} />
-        ))}
-      </div>
-
+      <Socials />
       <Divider />
 
       <form onSubmit={(e) => { e.preventDefault(); }} className="w-100 flex flex-col gap-4">
