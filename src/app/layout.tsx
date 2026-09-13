@@ -4,6 +4,8 @@ import { Philosopher } from "next/font/google";
 
 import { SITE_NAME } from "@/lib/consts";
 
+import FogReveal from "@/components/layout/fog_reveal";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,7 +22,9 @@ const philosopher = Philosopher({
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={philosopher.className}>
-      <body>{children}</body>
+      <body>
+        <FogReveal>{children}</FogReveal>
+      </body>
     </html>
   );
 }
