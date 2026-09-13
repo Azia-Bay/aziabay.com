@@ -1,10 +1,6 @@
 "use client"
 
-import {
-  LINK_TO_GITHUB,
-  LINK_TO_LINKEDIN,
-  LINK_TO_ITCHIO
-} from "@/lib/consts";
+import { SOCIALS } from "@/lib/consts";
 
 import Image from "next/image";
 
@@ -19,11 +15,9 @@ export default function ContactPanel() {
       <Divider />
 
       <div className="w-auto h-auto flex flex-row justify-center gap-1">
-        <Button href={LINK_TO_LINKEDIN} target="_blank" src="socials/button_icon_linkedin.png" alt="A 1-bit (black & white) pixel art icon of the LinkedIn logo, with a shadow underneath adding three-dimensionality." />
-  
-        <Button href={LINK_TO_GITHUB} target="_blank" src="socials/button_icon_github.png" alt="A 1-bit (black & white) pixel art icon of the GitHub logo, with a shadow underneath adding three-dimensionality." />
-  
-        <Button href={LINK_TO_ITCHIO} target="_blank" src="socials/button_icon_itchio.png" alt="A 1-bit (black & white) pixel art icon of the itch.io logo, with a shadow underneath adding three-dimensionality." />
+        {SOCIALS.map((social) => (
+          <Button key={social.href} href={social.href} target="_blank" src={social.src} alt={social.alt} />
+        ))}
       </div>
 
       <Divider />
