@@ -53,7 +53,7 @@ export default function GamesButton({ onClick, state, date, title, genres, tagli
         </div>
       </button>
       
-      <button onClick={() => openModal(`${title} thumbnail`, <Image className="max-w-full max-h-full w-auto h-auto pixelated" src={src} alt={alt} width={0} height={0} unoptimized />)} className="cursor-pointer group relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
+      <button onClick={() => openModal(`${title} thumbnail`, <Image className="object-contain pixelated" src={src} alt={alt} fill unoptimized />)} className="cursor-pointer group relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
         <span className="z-10 absolute inset-0 translate-x-full group-hover:translate-x-0 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--background)_0%_25%,transparent_25%_50%)]" />
 
         <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto max-w-none group-hover:scale-150 transition-transform duration-300 ease-out pixelated" src={src} alt={alt} width={0} height={0} unoptimized loading="eager" />

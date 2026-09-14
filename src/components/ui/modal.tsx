@@ -31,7 +31,7 @@ export default function Modal({ onClose, title, children }: ModalProps) {
           </button>
         </div>
 
-        <div className="flex-1 min-h-0 p-8 flex flex-col justify-center items-center">
+        <div className="relative flex-1 min-h-0 m-8">
           {children}
         </div>
       </div>
