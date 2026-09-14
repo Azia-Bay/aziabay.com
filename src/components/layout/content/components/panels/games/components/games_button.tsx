@@ -1,4 +1,7 @@
+"use client";
+
 import { GameState } from "@/lib/types"
+import { useModal } from "@/lib/modal_context";
 
 import Image from "next/image";
 
@@ -14,6 +17,8 @@ type GamesButtonProps = {
 };
 
 export default function GamesButton({ onClick, state, date, title, genres, tagline, src, alt }: GamesButtonProps) {
+  const { openModal } = useModal()!;
+
   const year = date?.getFullYear();
   const month = String((date?.getMonth() || 0) + 1).padStart(2, "0");
   const day = String(date?.getDate()).padStart(2, "0");
@@ -48,7 +53,7 @@ export default function GamesButton({ onClick, state, date, title, genres, tagli
         </div>
       </div>
       
-      <div className="relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
+      <div onClick={() => openModal("This is an example title", <div>Hello from the modal!</div>)} className="cursor-pointer relative flex-1 overflow-hidden rounded-lg rounded-l-none border-4 border-l-0 border-background border-double">
         <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-auto max-w-none pixelated" src={src} alt={alt} width={0} height={0} unoptimized loading="eager" />
       </div>
     </button>

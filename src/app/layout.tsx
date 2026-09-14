@@ -6,6 +6,8 @@ import { SITE_NAME } from "@/lib/consts";
 
 import FogReveal from "@/components/layout/fog_reveal";
 
+import { ModalProvider } from "@/lib/modal_context";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,8 +24,10 @@ const philosopher = Philosopher({
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={philosopher.className}>
-      <body>
-        <FogReveal>{children}</FogReveal>
+      <body className="cursor">
+        <ModalProvider>
+          <FogReveal>{children}</FogReveal>
+        </ModalProvider>
       </body>
     </html>
   );

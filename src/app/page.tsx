@@ -13,8 +13,8 @@ export default function Home() {
   const [tab, setTeb] = useState<Tab>(DEFAULT_TAB);
 
   return (
-    <div>
-      <div className="w-screen h-screen flex flex-row">
+    <div className="w-screen h-screen">
+      <div className="flex flex-row">
         <Sidebar onTabChange={setTeb} />
 
         <div className="flex-1 flex flex-col">
