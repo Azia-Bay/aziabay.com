@@ -6,7 +6,7 @@ type ResumeSectionProps = {
 export default function ResumeSection({ title, children }: ResumeSectionProps) {
   return (
     <div>
-      <h2 className="text-lg font-bold">{title}</h2>
+      <h2 className="text-lg">{title}</h2>
       {children}
     </div>
   )

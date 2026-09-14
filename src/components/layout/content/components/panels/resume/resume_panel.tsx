@@ -6,7 +6,7 @@ import EducationSection from "./components/resume_sections/resume_sections/educa
 
 export default function ResumePanel() {
   return (
-    <div className="scrollbar scroll-smooth overflow-y-auto flex-1 h-full max-w-200 mx-auto flex flex-col gap-4">
+    <div className="scrollbar scroll-smooth overflow-y-auto w-fit h-full min-h-0 rounded-lg mx-auto px-10 py-16 border-4 border-background border-double flex flex-col gap-4 bg-foreground text-background">
       <Header />
       <ExperienceSection />
       <TechnicalSkillsSection />
