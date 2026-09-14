@@ -11,6 +11,8 @@ export default function ExperienceResumeSection() {
 
         <Subsection role="Software Developer" org="Maxus33" start="September 2022" end="December 2023" loc="Richardson, TX" bullets={["Developed 3 cross-platform (Android and iOS) mobile applications using C#, XAML, and the .NET Framework.", "Ported 1.2k lines of code from Windows Forms to Xamarin Forms, allowing UWP/macOS cross-compatibility.", "Multiplied the storage capacity for embedded animations from 25,000 to 250,000+ with dotLottie file compression.", "Led daily stand-up meetings using Agile and Scrum development methodologies, and onboarded 3 interns."]} />
 
+        <Subsection role="Research Assistant" org="Pattern Discovery and Machine Learning Laboratory" start="December 2023" end="January 2024" loc="Richardson, TX" bullets={["Annotated 6k images from the CIFAR-10 dataset using Amazon Mechanical Turk (MTurk).", "Corroborated NSF-funded project \"MUDL: Multidimensional Uncertainty-Aware Deep Learning Framework\"."]} />
+
         <Subsection role="Instructor" org="iD Tech Camps" start="May 2023" end="July 2023" loc="Richardson, TX" bullets={["Instructed 50+ high school students in programming and game development using Java, JavaScript, and C++.", "Taught students with personalized learning plans and received a 100% satisfaction rate from students and parents."]} />
       </div>
     </Section>
