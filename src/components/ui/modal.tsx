@@ -26,7 +26,7 @@ export default function Modal({ onClose, title, children }: ModalProps) {
             {title}
           </div>
 
-          <button onClick={onClose} className="cursor-pointer px-4 py-2 text-xl font-bold">
+          <button onClick={onClose} className="cursor-pointer px-4 py-2 text-xl font-bold hover:scale-125 transition-transform duration-300 ease-out">
             X
           </button>
         </div>
