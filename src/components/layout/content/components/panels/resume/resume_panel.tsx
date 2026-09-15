@@ -3,7 +3,8 @@ import EducationSection from "./components/resume_sections/resume_sections/educa
 import ExperienceSection from "./components/resume_sections/resume_sections/experience/experience_resume_section";
 import TechnicalSkillsSection from "./components/resume_sections/resume_sections/technical_skills/technical_skills_resume_section";
 import ProjectsSection from "./components/resume_sections/resume_sections/projects/projects_resume_section";
-import ResearchSection from "./components/resume_sections/resume_sections/research/research_resume_section"
+import ResearchSection from "./components/resume_sections/resume_sections/research/research_resume_section";
+import VolunteerismSection from "./components/resume_sections/resume_sections/volunteerism/volunteerism_resume_section";
 
 export default function ResumePanel() {
   return (
@@ -14,6 +15,7 @@ export default function ResumePanel() {
       <ExperienceSection />
       <ProjectsSection />
       <ResearchSection />
+      <VolunteerismSection />
     </div>
   );
 }
