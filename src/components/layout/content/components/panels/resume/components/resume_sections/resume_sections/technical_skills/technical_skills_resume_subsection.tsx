@@ -6,8 +6,8 @@ type TechnicalSkillsResumeSubsectionProps = {
 export default function TechnicalSkillsResumeSubsection({ category, skills }: TechnicalSkillsResumeSubsectionProps) {
   return (
     <div className="flex flex-row gap-2">
-      <div>
-        <b>{category}</b>:
+      <div className="flex flex-row">
+        <h3 className="font-bold">{category}</h3>:
       </div>
 
       <div className="flex flex-row gap-1">
