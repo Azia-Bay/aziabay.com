@@ -6,7 +6,7 @@ type ExperienceResumeSubsectionProps = {
   loc: string;
   skills: string[];
   bullets: string[];
-}
+};
 
 export default function ExperienceResumeSubsection({ role, org, start, end, loc, skills, bullets }: ExperienceResumeSubsectionProps) {
   return (
@@ -23,19 +23,23 @@ export default function ExperienceResumeSubsection({ role, org, start, end, loc,
         </div>
       </div>
 
-      <div className="flex flex-row gap-1">
-        {skills.map((skill, index) => (
-          <div key={index} className="px-3 py-1 rounded-sm bg-background text-foreground text-sm lowercase">
-            {skill}
-          </div>
-        ))}
-      </div>
+      {skills.length > 0 &&
+        <div className="flex flex-row gap-1">
+          {skills.map((skill, index) => (
+            <div key={index} className="px-3 py-1 rounded-sm bg-background text-foreground text-sm lowercase">
+              {skill}
+            </div>
+          ))}
+        </div>
+      }
 
-      <ul className="list-disc list-inside ml-5 flex flex-col gap-0.5">
-        {bullets.map((bullet, index) => (
-          <li key={index}>{bullet}</li>
-        ))}
-      </ul>
+      {bullets.length > 0 &&
+        <ul className="list-disc list-inside ml-5 flex flex-col gap-0.5">
+          {bullets.map((bullet, index) => (
+            <li key={index}>{bullet}</li>
+          ))}
+        </ul>
+      }
     </div>
   );
 }
