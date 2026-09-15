@@ -12,7 +12,7 @@ export default function ResearchResumeSubsection({ title, link, href, skills, bu
       <div className="flex flex-col">
         <h3 className="font-bold">{title}</h3>
 
-        <a href={href} target="_blank" className="cursor-pointer underline">{link}</a>
+        <a href={href} target="_blank" className="cursor-pointer mr-auto underline">{link}</a>
       </div>
 
       {skills.length > 0 &&
