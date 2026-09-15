@@ -5,6 +5,7 @@ import TechnicalSkillsSection from "./components/resume_sections/resume_sections
 import ProjectsSection from "./components/resume_sections/resume_sections/projects/projects_resume_section";
 import ResearchSection from "./components/resume_sections/resume_sections/research/research_resume_section";
 import AwardsSection from "./components/resume_sections/resume_sections/awards/awards_resume_section";
+import LeadershipSection from "./components/resume_sections/resume_sections/leadership/leadership_resume_section";
 import VolunteerismSection from "./components/resume_sections/resume_sections/volunteerism/volunteerism_resume_section";
 
 export default function ResumePanel() {
@@ -17,6 +18,7 @@ export default function ResumePanel() {
       <ProjectsSection />
       <ResearchSection />
       <AwardsSection />
+      <LeadershipSection />
       <VolunteerismSection />
     </div>
   );
