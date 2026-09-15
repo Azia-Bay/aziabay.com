@@ -8,10 +8,10 @@ export default function ResumePanel() {
   return (
     <div className="scrollbar scroll-smooth overflow-y-auto w-fit h-full min-h-0 rounded-lg mx-auto px-10 py-16 border-4 border-background border-double flex flex-col gap-4 bg-foreground text-background">
       <Header />
+      <EducationSection />
       <ExperienceSection />
       <TechnicalSkillsSection />
       <ProjectsSection />
-      <EducationSection />
     </div>
   );
 }
