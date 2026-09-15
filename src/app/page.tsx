@@ -7,6 +7,7 @@ import { DEFAULT_TAB } from "@/lib/consts"
 
 import Sidebar from "@/components/layout/sidebar/sidebar"
 import Content from "@/components/layout/content/content"
+import LightSwitch from "@/components/layout/light_switch/light_switch"
 import Socials from "@/components/layout/socials/socials"
 
 export default function Home() {
@@ -19,7 +20,10 @@ export default function Home() {
       <div className="flex-1 flex flex-col">
         <Content tab={tab} onTabChange={setTeb} />
 
-        <Socials />
+        <div className="flex flex-row items-center">
+          <LightSwitch />
+          <Socials />
+        </div>
       </div>
     </div>
   );
