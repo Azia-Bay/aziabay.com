@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 :root {
+  --background: white;
+  --foreground: black;
+
+  --light: white;
+  --dark: black;
+}
+
+.dark {
   --background: black;
   --foreground: white;
 }
@@ -8,6 +16,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  --color-light: var(--light);
+  --color-dark: var(--dark);
 }
 
 body {
@@ -16,7 +27,7 @@ body {
 }
 
 input::placeholder, textarea::placeholder {
-  color: var(--background);
+  color: var(--dark);
   opacity: 1;
 }
 

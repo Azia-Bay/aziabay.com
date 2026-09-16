@@ -40,7 +40,7 @@ export default function FogReveal({ children, cellSize = 2, duration = 1000 }: F
       const cols = Math.ceil(canvas.width / cellSize);
       const rows = Math.ceil(canvas.height / cellSize);
 
-      const fillColor = getComputedStyle(document.documentElement).getPropertyValue("--background").trim();
+      const fillColor = getComputedStyle(document.documentElement).getPropertyValue("--dark").trim();
 
       function draw(now: number) {
         if (start === null) start = now;
@@ -80,7 +80,7 @@ export default function FogReveal({ children, cellSize = 2, duration = 1000 }: F
     <div>
       {children}
 
-      {!canvasReady && <div className="fixed inset-0 z-50 bg-background" />}
+      {!canvasReady && <div className="fixed inset-0 z-50 bg-dark" />}
 
       <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-50" />
     </div>

@@ -18,7 +18,7 @@ export default function ResearchResumeSubsection({ title, link, href, skills, bu
       {skills.length > 0 &&
         <div className="flex flex-row gap-1">
           {skills.map((skill, index) => (
-            <div key={index} className="px-3 py-1 rounded-sm bg-background text-foreground text-sm lowercase">
+            <div key={index} className="px-3 py-1 rounded-sm bg-dark text-light text-sm lowercase">
               {skill}
             </div>
           ))}

@@ -18,8 +18,8 @@ export default function Button({ children, href, target, onClick, src, alt }: Bu
   var icon_size = (children && 48) || 32
   
   var ele = (
-    <button onClick={onClick} className={`group relative overflow-hidden cursor-pointer w-auto py-1 ${px} ${pr} rounded-lg border-4 border-background border-double flex flex-row items-center gap-3 bg-foreground text-background text-lg font-bold uppercase`}>
-      <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--background)_0%_25%,var(--foreground)_25%_50%)]" />
+    <button onClick={onClick} className={`group relative overflow-hidden cursor-pointer w-auto py-1 ${px} ${pr} rounded-lg border-4 border-dark border-double flex flex-row items-center gap-3 bg-light text-dark text-lg font-bold uppercase`}>
+      <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
 
       {src && alt &&
         <Image src={src} alt={alt} className="z-10 pixelated" width={icon_size} height={icon_size} unoptimized loading="eager" />
@@ -29,7 +29,7 @@ export default function Button({ children, href, target, onClick, src, alt }: Bu
         <span className="relative z-10 mx-auto">
           {children}
 
-          <span className="absolute left-0 bottom-1 w-full h-px bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          <span className="absolute left-0 bottom-1 w-full h-px bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
         </span>
       }
     </button>
