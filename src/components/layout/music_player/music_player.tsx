@@ -9,10 +9,13 @@ type MusicPlayerProps = {
 
 export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -34,7 +37,28 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
       audio.removeEventListener("timeupdate", updateTime);
       audio.removeEventListener("loadedmetadata", setAudioDuration);
     };
-  }, [title]);
+  }, []);
+
+  useEffect(() => {
+    if (!isDragging) return;
+
+    function handleMouseMove(e: MouseEvent) {
+      const time = calculateSeekTime(e.clientX);
+      if (time !== null && audioRef.current) audioRef.current.currentTime = time;
+    }
+
+    function handleMouseUp() {
+      setIsDragging(false);
+    }
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging, duration]);
 
   function togglePlay() {
     const audio = audioRef.current;
@@ -46,18 +70,27 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
     setIsPlaying(!isPlaying);
   }
 
+  function calculateSeekTime(clientX: number) {
+    const bar = barRef.current;
+    
+    if (!bar || !duration) return null;
+
+    const rect = bar.getBoundingClientRect();
+    const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
+
+    const percentage = x / rect.width;
+    
+    return percentage * duration;
+  }
+
   function handleSeek(e: React.MouseEvent<HTMLDivElement>) {
     const audio = audioRef.current;
 
-    if (!audio || !duration) return;
+    setIsDragging(true);
 
-    const bar = e.currentTarget;
-    const rect = bar.getBoundingClientRect();
-
-    const x = e.clientX - rect.left;
-    const percentage = x / rect.width;
-
-    audio.currentTime = percentage * duration;
+    const time = calculateSeekTime(e.clientX);
+    
+    if (time !== null && audio) audio.currentTime = time;
   }
 
   function formatTime(secs: number) {
@@ -73,7 +106,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
 
   return (
     <div className="mx-12 mb-10 flex flex-col">
-      <audio ref={audioRef} src={src} />
+      <audio ref={audioRef} src={src} loop />
 
       <div className="flex flex-row items-center">
         <button onClick={togglePlay} className="cursor-pointer w-8 h-8 bg-background text-foreground flex items-center justify-center">
@@ -85,7 +118,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
             <span>{title}</span>
           </div>
           
-          <div onClick={handleSeek} className="cursor-pointer h-6 rounded-lg border-4 border-foreground border-double bg-background">
+          <div ref={barRef} onMouseDown={handleSeek} className="cursor-pointer h-6 rounded-lg border-4 border-foreground border-double bg-background">
             <div className="h-full bg-foreground" style={{ width: `${progress}%` }} />
           </div>
         </div>
