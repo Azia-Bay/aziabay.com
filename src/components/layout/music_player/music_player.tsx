@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import Image from "next/image";
+
+import { useTheme } from "@teispace/next-themes";
+
 type MusicPlayerProps = {
   src: string;
   title: string;
@@ -12,6 +16,8 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const barRef = useRef<HTMLDivElement>(null);
   const volumeBarRef = useRef<HTMLDivElement>(null);
 
+  const [mounted, setMounted] = useState(false);
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -19,6 +25,24 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
 
   const [isDragging, setIsDragging] = useState(false);
   const [isDraggingVolume, setIsDraggingVolume] = useState(false);
+
+  const { theme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+
+  var play_button_src = null
+  var volume_button_src = null
+
+  if (mounted) {
+    if (theme === "dark") {
+      play_button_src = isPlaying ? "music_player/pause_icon.png" : "music_player/play_icon.png";
+      volume_button_src = "music_player/volume_icon.png";
+    }
+    else {
+      play_button_src = isPlaying ? "music_player/pause_icon_light.png" : "music_player/play_icon_light.png";
+      volume_button_src = "music_player/volume_icon_light.png";
+    }
+  }
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -169,8 +193,8 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
       <audio ref={audioRef} src={src} loop />
 
       <div className="flex flex-row items-center">
-        <button onClick={togglePlay} className="cursor-pointer w-8 h-8 bg-background text-foreground flex items-center justify-center">
-          {isPlaying ? "❚❚" : "▶"}
+        <button onClick={togglePlay} className="cursor-pointer p-2">
+          {play_button_src && <Image src={play_button_src} alt="" className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
         <div className="overflow-clip flex-1 ml-2 -mt-6 flex flex-col">
@@ -186,6 +210,10 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
         <div className="ml-4 text-sm w-22">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
+
+        <button className="cursor-pointer p-2">
+          {volume_button_src && <Image src={volume_button_src} alt="" className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+        </button>
 
         <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-20 h-4 rounded-full border-4 border-foreground border-double bg-background">
           <div className="h-full rounded-full bg-foreground" style={{ width: `${volume * 100}%` }} />
