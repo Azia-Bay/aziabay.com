@@ -193,7 +193,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
       <audio ref={audioRef} src={src} loop />
 
       <div className="flex flex-row items-center">
-        <button onClick={togglePlay} className="cursor-pointer p-2">
+        <button onClick={togglePlay} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
           {play_button_src && <Image src={play_button_src} alt="" className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
@@ -207,11 +207,11 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
           </div>
         </div>
 
-        <div className="ml-4 text-sm w-22">
+        <div className="ml-4 text-sm w-20">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
 
-        <button className="cursor-pointer p-2">
+        <button className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
           {volume_button_src && <Image src={volume_button_src} alt="" className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
