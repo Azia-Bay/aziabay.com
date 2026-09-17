@@ -8,6 +8,7 @@ import ResumePanel from "@/components/layout/content/components/panels/resume/re
 import ContactPanel from "@/components/layout/content/components/panels/contact/contact_panel"
 
 import BruitGamesPage from "@/components/layout/content/components/panels/games/pages/bruit_page"
+import DSTGGamesPage from "@/components/layout/content/components/panels/games/pages/dstg_page"
 
 import AziabayBlogPage from "@/components/layout/content/components/panels/blog/pages/aziabay_page"
 
@@ -28,6 +29,7 @@ export default function Content({ tab, onTabChange }: ContentProps) {
         {tab === "contact" && <ContactPanel />}
         
         {tab === "games_page_bruit" && <BruitGamesPage />}
+        {tab == "games_page_dstg" && <DSTGGamesPage />}
         
         {tab === "blog_page_aziabay" && <AziabayBlogPage />}
       </main>

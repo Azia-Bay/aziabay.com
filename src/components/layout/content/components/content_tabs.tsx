@@ -19,6 +19,7 @@ export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
     contact: "Contact",
 
     games_page_bruit: "Bruit",
+    games_page_dstg: "Don't Start the Game",
 
     blog_page_aziabay: "Devlog: The Creation of aziabay.com"
   };
