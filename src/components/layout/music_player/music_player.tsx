@@ -19,9 +19,12 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const [mounted, setMounted] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(false);
+
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  
   const [volume, setVolume] = useState(1);
+  const [muted, setMuted] = useState(false);
 
   const [isDragging, setIsDragging] = useState(false);
   const [isDraggingVolume, setIsDraggingVolume] = useState(false);
@@ -36,11 +39,11 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   if (mounted) {
     if (theme === "dark") {
       play_button_src = isPlaying ? "music_player/pause_icon.png" : "music_player/play_icon.png";
-      volume_button_src = "music_player/volume_icon.png";
+      volume_button_src = !muted ? "music_player/volume_icon.png" : "music_player/volume_icon_muted.png";
     }
     else {
       play_button_src = isPlaying ? "music_player/pause_icon_light.png" : "music_player/play_icon_light.png";
-      volume_button_src = "music_player/volume_icon_light.png";
+      volume_button_src = !muted ? "music_player/volume_icon_light.png" : "music_player/volume_icon_muted_light.png";
     }
   }
 
@@ -151,6 +154,15 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
     if (time !== null && audio) audio.currentTime = time;
   }
 
+  function toggleMute() {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    audio.muted = !audio.muted;
+    setMuted(!muted);
+  }
+
   function calculateSeekVolume(clientX: number) {
     const volumeBar = volumeBarRef.current;
     
@@ -211,8 +223,8 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
 
-        <button className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-          {volume_button_src && <Image src={volume_button_src} alt="A pixel art icon of a volume button." className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+        <button onClick={toggleMute} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
+          {volume_button_src && <Image src={volume_button_src} alt={!muted ? "A pixel art icon of a volume button." : "A pixel art icon of a volume mute button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
         <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-20 h-4 rounded-full border-4 border-foreground border-double bg-background">
