@@ -30,6 +30,9 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
       setDuration(audio!.duration);
     }
 
+    updateTime();
+    setAudioDuration();
+
     audio.addEventListener("timeupdate", updateTime);
     audio.addEventListener("loadedmetadata", setAudioDuration);
 
@@ -113,7 +116,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
           {isPlaying ? "❚❚" : "▶"}
         </button>
 
-        <div className="overflow-clip flex-1 w-50 ml-2 -mt-6 flex flex-col">
+        <div className="overflow-clip flex-1 ml-2 -mt-6 flex flex-col">
           <div className="marquee h-6">
             <span>{title}</span>
           </div>

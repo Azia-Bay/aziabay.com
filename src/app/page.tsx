@@ -21,7 +21,7 @@ export default function Home() {
         <Content tab={tab} onTabChange={setTeb} />
 
         <div className="flex flex-row items-center">
-          <MusicPlayer src="music/Bet You Can.ogg" title="Title" />
+          <MusicPlayer src="music/late_night_radio.mp3" title="Late Night Radio by Kevin Macleod" />
           <Socials />
         </div>
       </div>
