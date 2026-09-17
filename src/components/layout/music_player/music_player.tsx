@@ -10,35 +10,38 @@ type MusicPlayerProps = {
 export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
+  const volumeBarRef = useRef<HTMLDivElement>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [volume, setVolume] = useState(1);
 
   const [isDragging, setIsDragging] = useState(false);
+  const [isDraggingVolume, setIsDraggingVolume] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
 
     if (!audio) return;
-
-    function updateTime() {
-      setCurrentTime(audio!.currentTime);
-    }
     
     function setAudioDuration() {
       setDuration(audio!.duration);
     }
 
-    updateTime();
-    setAudioDuration();
+    function updateTime() {
+      setCurrentTime(audio!.currentTime);
+    }
 
-    audio.addEventListener("timeupdate", updateTime);
+    setAudioDuration();
+    updateTime();
+
     audio.addEventListener("loadedmetadata", setAudioDuration);
+    audio.addEventListener("timeupdate", updateTime);
 
     return () => {
-      audio.removeEventListener("timeupdate", updateTime);
       audio.removeEventListener("loadedmetadata", setAudioDuration);
+      audio.removeEventListener("timeupdate", updateTime);
     };
   }, []);
 
@@ -46,8 +49,10 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
     if (!isDragging) return;
 
     function handleMouseMove(e: MouseEvent) {
+      const audio = audioRef.current;
+      
       const time = calculateSeekTime(e.clientX);
-      if (time !== null && audioRef.current) audioRef.current.currentTime = time;
+      if (time !== null && audio) audio.currentTime = time;
     }
 
     function handleMouseUp() {
@@ -62,6 +67,32 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging, duration]);
+
+  useEffect(() => {
+    if (!isDraggingVolume) return;
+
+    function handleMouseMove(e: MouseEvent) {
+      const audio = audioRef.current;
+
+      const volume = calculateSeekVolume(e.clientX);
+      if (volume !== null && audio) {
+        setVolume(volume);
+        audio.volume = volume;
+      }
+    }
+
+    function handleMouseUp() {
+      setIsDraggingVolume(false);
+    }
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDraggingVolume]);
 
   function togglePlay() {
     const audio = audioRef.current;
@@ -96,6 +127,32 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
     if (time !== null && audio) audio.currentTime = time;
   }
 
+  function calculateSeekVolume(clientX: number) {
+    const volumeBar = volumeBarRef.current;
+    
+    if (!volumeBar) return null;
+
+    const rect = volumeBar.getBoundingClientRect();
+    const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
+
+    const percentage = x / rect.width;
+    
+    return percentage;
+  }
+
+  function handleVolumeChange(e: React.MouseEvent<HTMLDivElement>) {
+    const audio = audioRef.current;
+
+    setIsDraggingVolume(true);
+
+    const volume = calculateSeekVolume(e.clientX);
+    
+    if (volume !== null && audio) {
+      setVolume(volume);
+      audio.volume = volume;
+    }
+  }
+
   function formatTime(secs: number) {
     if (isNaN(secs)) return "0:00";
 
@@ -128,6 +185,10 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
 
         <div className="ml-4 text-sm w-22">
           {formatTime(currentTime)} / {formatTime(duration)}
+        </div>
+
+        <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-20 h-4 rounded-full border-4 border-foreground border-double bg-background">
+          <div className="h-full rounded-full bg-foreground" style={{ width: `${volume * 100}%` }} />
         </div>
       </div>
     </div>
