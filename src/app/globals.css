@@ -70,3 +70,16 @@ textarea {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
+
+@keyframes marquee-keyframes {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.marquee {
+  animation: marquee-keyframes 10s linear infinite;
+}

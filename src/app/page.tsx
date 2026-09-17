@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 
-import { Tab } from "@/lib/types"
-import { DEFAULT_TAB } from "@/lib/consts"
+import { Tab } from "@/lib/types";
+import { DEFAULT_TAB } from "@/lib/consts";
 
-import Sidebar from "@/components/layout/sidebar/sidebar"
-import Content from "@/components/layout/content/content"
-import LightSwitch from "@/components/layout/light_switch/light_switch"
-import Socials from "@/components/layout/socials/socials"
+import Sidebar from "@/components/layout/sidebar/sidebar";
+import Content from "@/components/layout/content/content";
+import MusicPlayer from "@/components/layout/music_player/music_player";
+import Socials from "@/components/layout/socials/socials";
 
 export default function Home() {
   const [tab, setTeb] = useState<Tab>(DEFAULT_TAB);
@@ -21,7 +21,7 @@ export default function Home() {
         <Content tab={tab} onTabChange={setTeb} />
 
         <div className="flex flex-row items-center">
-          <LightSwitch />
+          <MusicPlayer src="music/Bet You Can.ogg" title="Title" />
           <Socials />
         </div>
       </div>
