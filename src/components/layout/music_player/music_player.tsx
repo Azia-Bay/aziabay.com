@@ -194,7 +194,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
 
       <div className="flex flex-row items-center">
         <button onClick={togglePlay} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-          {play_button_src && <Image src={play_button_src} alt="" className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+          {play_button_src && <Image src={play_button_src} alt={isPlaying ? "A pixel art icon of a pause button." : "A pixel art icon of a play button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
         <div className="overflow-clip flex-1 ml-2 -mt-6 flex flex-col">
@@ -212,7 +212,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
         </div>
 
         <button className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-          {volume_button_src && <Image src={volume_button_src} alt="" className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+          {volume_button_src && <Image src={volume_button_src} alt="A pixel art icon of a volume button." className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
         <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-20 h-4 rounded-full border-4 border-foreground border-double bg-background">
