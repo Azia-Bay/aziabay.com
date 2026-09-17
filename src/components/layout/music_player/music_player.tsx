@@ -117,7 +117,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
         </button>
 
         <div className="overflow-clip flex-1 ml-2 -mt-6 flex flex-col">
-          <div className="marquee h-6">
+          <div className={`${isPlaying ? "marquee" : ""} h-6`}>
             <span>{title}</span>
           </div>
           
