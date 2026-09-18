@@ -86,6 +86,12 @@ export default function DSTGPage() {
         </h1>
       </a>
 
+      <video controls className="self-center w-full h-auto max-w-200 rounded-lg border-double border-4 border-foreground" preload="metadata">
+        <source src="content/panels/games/pages/dstg/teaser.mp4" type="video/mp4" />
+
+        Your browser does not support the video tag.
+      </video>
+
       <a href={LINK} target="_blank" className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground">
         <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
 
