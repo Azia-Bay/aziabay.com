@@ -75,16 +75,37 @@ export default function DSTGPage() {
         </h1>
       </a>
 
-      <div className="w-1/2 flex flex-col gap-6">
-        <a id="description" href="#description" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
-          <h1 className="relative inline text-2xl font-bold">
-            Description
+      <div className="flex flex-row gap-4">
+        <div className="flex-1 flex flex-col gap-6">
+          <a id="description" href="#description" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
+            <h1 className="relative inline text-2xl font-bold">
+              Description
 
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
-          </h1>
-        </a>
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+            </h1>
+          </a>
 
-        <div className="text-lg">{DESCRIPTION}</div>
+          <div className="text-xl">{DESCRIPTION}</div>
+        </div>
+
+        <div className="flex-1 flex flex-col gap-6">
+          <a id="reviews" href="#reviews" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
+            <h1 className="relative inline text-2xl font-bold">
+              Reviews
+
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+            </h1>
+          </a>
+
+          <div className="ml-4 flex flex-col gap-4">
+            {REVIEWS.map((review, index) => {
+              return <div key={index} className="flex flex-col gap-1">
+                <div className="text-xl">{review.quote}</div>
+                <div className="ml-4 text-sm">&mdash; <i>{review.author}</i></div>
+              </div>
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -101,25 +122,6 @@ export default function DSTGPage() {
             return <button key={index} onClick={() => openModal(`${TITLE} screenshot ${index + 1}`, <Image className="object-contain pixelated" src={screenshot.src} alt={screenshot.alt} fill unoptimized />)} className="cursor-pointer group w-3/5">
               <Image className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated" src={screenshot.src} alt={screenshot.alt} width={0} height={0} unoptimized />
             </button>
-          })}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-6">
-        <a id="reviews" href="#reviews" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
-          <h1 className="relative inline text-2xl font-bold">
-            Reviews
-
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
-          </h1>
-        </a>
-
-        <div className="ml-4 flex flex-col gap-4">
-          {REVIEWS.map((review, index) => {
-            return <div key={index} className="flex flex-col gap-1">
-              <div className="text-xl">{review.quote}</div>
-              <div className="ml-4 text-sm">&mdash; <i>{review.author}</i></div>
-            </div>
           })}
         </div>
       </div>
