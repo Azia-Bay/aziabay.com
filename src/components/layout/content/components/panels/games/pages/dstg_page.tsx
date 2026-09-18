@@ -66,22 +66,34 @@ export default function DSTGPage() {
   const { openModal } = useModal()!;
 
   return (
-    <div className="scrollbar scroll-smooth overflow-y-auto h-full min-h-0 flex flex-col gap-12">
-      <a href="#title" className="cursor-pointer self-start">
-        <h1 id="title" className="text-3xl font-bold underline underline-offset-4">{TITLE}</h1>
+    <div className="scrollbar scroll-smooth overflow-y-auto h-full min-h-0 pr-4 flex flex-col gap-12">
+      <a id="title" href="#title" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
+        <h1 className="relative inline text-3xl font-bold">
+          {TITLE}
+
+          <span className="absolute left-0 bottom-0 w-full h-0.75 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+        </h1>
       </a>
 
-      <div className="flex flex-col gap-6">
-        <a href="#description" className="cursor-pointer self-start">
-          <h2 id="description" className="text-2xl underline underline-offset-4">Description</h2>
+      <div className="w-1/2 flex flex-col gap-6">
+        <a id="description" href="#description" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
+          <h1 className="relative inline text-2xl font-bold">
+            Description
+
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          </h1>
         </a>
 
-        <div className="text-lg max-w-150">{DESCRIPTION}</div>
+        <div className="text-lg">{DESCRIPTION}</div>
       </div>
 
       <div className="flex flex-col gap-6">
-        <a href="#screenshots" className="cursor-pointer self-start">
-          <h2 id="screenshots" className="text-2xl underline underline-offset-4">Screenshots</h2>
+        <a id="screenshots" href="#screenshots" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
+          <h1 className="relative inline text-2xl font-bold">
+            Screenshots
+
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          </h1>
         </a>
 
         <div className="ml-8 flex flex-col gap-4">
@@ -94,8 +106,12 @@ export default function DSTGPage() {
       </div>
 
       <div className="flex flex-col gap-6">
-        <a href="#reviews" className="cursor-pointer self-start">
-          <h2 id="reviews" className="text-2xl underline underline-offset-4">Reviews</h2>
+        <a id="reviews" href="#reviews" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
+          <h1 className="relative inline text-2xl font-bold">
+            Reviews
+
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          </h1>
         </a>
 
         <div className="ml-4 flex flex-col gap-4">
@@ -109,8 +125,12 @@ export default function DSTGPage() {
       </div>
 
       <div className="flex flex-col gap-6">
-        <a href="#credits" className="cursor-pointer self-start">
-          <h2 id="credits" className="text-2xl underline underline-offset-4">Credits</h2>
+        <a id="credits" href="#credits" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
+          <h1 className="relative inline text-2xl font-bold">
+            Credits
+
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          </h1>
         </a>
 
         <div className="flex flex-col gap-4">
