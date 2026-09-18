@@ -1,5 +1,7 @@
 "use client";
 
+import { AUTHOR_NAME } from "@/lib/consts";
+
 import { useModal } from "@/lib/modal_context";
 
 import Image from "next/image";
@@ -173,14 +175,16 @@ export default function DSTGPage() {
             </h1>
           </a>
 
-          <div className="flex-1 flex-col gap-4">
+          <div className="flex-1 flex flex-col gap-4">
             {CREDITS.map((credit, index) => {
               return <div key={index} className="grid grid-cols-2 items-center gap-12">
                 <h3 className="text-end text-xl">{credit.category}</h3>
 
                 <div className="flex flex-col">
                   {credit.names.map((credit, jndex) => {
-                    return <div key={jndex}>{credit}</div>
+                    return <div key={jndex}>
+                      <div className={credit === AUTHOR_NAME ? "italic" : ""}>{credit}</div>
+                    </div>
                   })}
                 </div>
               </div>
