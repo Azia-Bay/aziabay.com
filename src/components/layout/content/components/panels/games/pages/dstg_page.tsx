@@ -86,7 +86,7 @@ export default function DSTGPage() {
         </h1>
       </a>
 
-      <a href={LINK} target="_blank" className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-4 py-2 rounded-lg border-4 border-background border-double bg-foreground">
+      <a href={LINK} target="_blank" className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-8 py-4 rounded-lg border-4 border-background border-double bg-foreground">
         <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
 
         <div className="relative z-10 text-background text-2xl font-bold uppercase">
