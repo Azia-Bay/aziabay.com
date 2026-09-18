@@ -8,6 +8,8 @@ const TITLE = "Don't Start the Game";
 
 const DESCRIPTION = "Break the company mold, one rule at a time. A short and humorous interactive experience about annoying your co-workers and breaking company rules for the love of the game.";
 
+const GENRES = ["adventure", "comedy"];
+
 class Screenshot {
   public src: string;
   public alt: string;
@@ -86,6 +88,14 @@ export default function DSTGPage() {
           </a>
 
           <div className="text-xl">{DESCRIPTION}</div>
+
+          <div className="flex flex-row gap-1.5">
+            {GENRES.map((genre, index) => (
+              <div key={index} className="px-3 py-1 rounded-sm bg-foreground text-background text-sm lowercase">
+                {genre}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex-1 flex flex-col gap-6">
