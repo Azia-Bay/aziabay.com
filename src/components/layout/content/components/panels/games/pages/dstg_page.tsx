@@ -10,6 +10,9 @@ const DESCRIPTION = "Break the company mold, one rule at a time. A short and hum
 
 const GENRES = ["adventure", "comedy"];
 
+const STATUS = "Released";
+const DATE = "March 28, 2024";
+
 class Screenshot {
   public src: string;
   public alt: string;
@@ -39,6 +42,10 @@ const REVIEWS = [
   new Review(
     "Reminds me of the old AdultSwim games from back in the day. Dedicated scream button is an A+ design choice.",
     "Tyler Reed, High On Life 2 artist"
+  ),
+  new Review(
+    "Really polished game!",
+    "Tryston Minsquero, Grimhook programmer"
   ),
   new Review(
     "It's just so cute and it made me happy I love it ;-;",
@@ -88,6 +95,8 @@ export default function DSTGPage() {
           </a>
 
           <div className="text-xl">{DESCRIPTION}</div>
+
+          <i>{STATUS} {DATE}</i>
 
           <div className="flex flex-row gap-1.5">
             {GENRES.map((genre, index) => (
