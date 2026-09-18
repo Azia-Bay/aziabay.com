@@ -24,8 +24,8 @@ class Screenshot {
 };
 
 const SCREENSHOTS = [
-  new Screenshot("content/panels/games/pages/dstg/gameplay_1.png", ""),
-  new Screenshot("content/panels/games/pages/dstg/gameplay_2.png", "")
+  new Screenshot("content/panels/games/pages/dstg/gameplay_1.png", "A screenshot of Don't Start the Game gameplay. The game's art style consists of 16-bit top-down pixel art. A cartoonish man in a white button-up stands in the middle of an office building floor. Inside the room are two potted plants; a safe; two office desks—complete with file cabinet, computer, and chair; a bulletin board; two office workers standing and speaking to one another; two office workers sitting at the two office desks; three interactable pieces of paper on the floor; and an interactable silver key on the floor. The top-left corner of the screen reads: 'RULES LIST. 1. Don't make Paper Airplanes during work hours. 2. Don't fly Paper Airplanes in your office. 3. Don't fly Paper Airplanes at your co-workers. 4. Don't open the safe.' The top-center of the screen hosts four empty inventory slots. The bottom-left corner of the screen reads: 'Stuck? Click to reset level.'"),
+  new Screenshot("content/panels/games/pages/dstg/gameplay_2.png", "A screenshot of Don't Start the Game gameplay. An elevator loading screen that reads: A blue Leggo brick has made it into the elevator. Despite its normal appearance, it can send even the strongest person through all seven levels of purgatorial pain with a single step. You shudder.")
 ];
 
 class Review {
