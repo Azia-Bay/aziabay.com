@@ -6,6 +6,8 @@ import Image from "next/image";
 
 const TITLE = "Don't Start the Game";
 
+const LINK = "https://theitsybitsyspider.itch.io/dont-start-the-game";
+
 const DESCRIPTION = "Break the company mold, one rule at a time. A short and humorous interactive experience about annoying your co-workers and breaking company rules for the love of the game.";
 
 const GENRES = ["adventure", "comedy"];
@@ -82,6 +84,16 @@ export default function DSTGPage() {
 
           <span className="absolute left-0 bottom-0 w-full h-0.75 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
         </h1>
+      </a>
+
+      <a href={LINK} target="_blank" className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-4 py-2 rounded-lg border-4 border-background border-double bg-foreground">
+        <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
+
+        <div className="relative z-10 text-background text-2xl font-bold uppercase">
+          Play free on itch.io
+
+          <span className="absolute left-0 bottom-0.5 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+        </div>
       </a>
 
       <div className="flex flex-row gap-4">
