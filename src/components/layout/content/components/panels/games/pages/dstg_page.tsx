@@ -6,6 +6,21 @@ import Image from "next/image";
 
 const TITLE = "Don't Start the Game";
 
+class Screenshot {
+  public src: string;
+  public alt: string;
+
+  constructor(src: string, alt: string) {
+    this.src = src;
+    this.alt = alt;
+  }
+};
+
+const SCREENSHOTS = [
+  new Screenshot("content/panels/games/pages/dstg/gameplay_1.png", ""),
+  new Screenshot("content/panels/games/pages/dstg/gameplay_2.png", "")
+];
+
 class Credit {
   public category: string;
   public names: string[];
@@ -24,11 +39,6 @@ const CREDITS = [
   new Credit("Lead Writing", ["Aurum"])
 ];
 
-const SCREENSHOTS = [
-  ["content/panels/games/pages/dstg/gameplay_1.png", ""],
-  ["content/panels/games/pages/dstg/gameplay_2.png", ""]
-];
-
 export default function DSTGPage() {
   const { openModal } = useModal()!;
 
@@ -45,8 +55,8 @@ export default function DSTGPage() {
 
         <div className="ml-8 flex flex-col gap-4">
           {SCREENSHOTS.map((screenshot, index) => {
-            return <button key={index} onClick={() => openModal(`${TITLE} screenshot ${index + 1}`, <Image className="object-contain pixelated" src={screenshot[0]} alt={screenshot[1]} fill unoptimized />)} className="cursor-pointer group w-3/5">
-              <Image className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated" src={screenshot[0]} alt={screenshot[1]} width={0} height={0} unoptimized />
+            return <button key={index} onClick={() => openModal(`${TITLE} screenshot ${index + 1}`, <Image className="object-contain pixelated" src={screenshot.src} alt={screenshot.alt} fill unoptimized />)} className="cursor-pointer group w-3/5">
+              <Image className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated" src={screenshot.src} alt={screenshot.alt} width={0} height={0} unoptimized />
             </button>
           })}
         </div>
