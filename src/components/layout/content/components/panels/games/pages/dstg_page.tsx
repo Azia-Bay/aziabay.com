@@ -137,7 +137,7 @@ export default function DSTGPage() {
       </div>
 
       <div className="flex flex-col gap-6">
-        <a id="credits" href="#credits" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
+        <a id="credits" href="#credits" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
           <h1 className="relative inline text-2xl font-bold">
             Credits
 
@@ -147,8 +147,8 @@ export default function DSTGPage() {
 
         <div className="flex flex-col gap-4">
           {CREDITS.map((credit, index) => {
-            return <div key={index} className="flex flex-row items-center gap-12">
-              <h3 className="min-w-1/4 text-xl">{credit.category}</h3>
+            return <div key={index} className="grid grid-cols-2 items-center gap-12">
+              <h3 className="text-end text-xl">{credit.category}</h3>
 
               <div className="flex flex-col">
                 {credit.names.map((credit, jndex) => {
