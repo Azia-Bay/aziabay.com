@@ -6,6 +6,8 @@ import Image from "next/image";
 
 const TITLE = "Don't Start the Game";
 
+const DESCRIPTION = "Break the company mold, one rule at a time. A short and humorous interactive experience about annoying your co-workers and breaking company rules for the love of the game.";
+
 class Screenshot {
   public src: string;
   public alt: string;
@@ -68,6 +70,14 @@ export default function DSTGPage() {
       <a href="#title" className="cursor-pointer self-start">
         <h1 id="title" className="text-3xl font-bold underline underline-offset-4">{TITLE}</h1>
       </a>
+
+      <div className="flex flex-col gap-6">
+        <a href="#description" className="cursor-pointer self-start">
+          <h2 id="description" className="text-2xl underline underline-offset-4">Description</h2>
+        </a>
+
+        <div className="text-lg max-w-150">{DESCRIPTION}</div>
+      </div>
 
       <div className="flex flex-col gap-6">
         <a href="#screenshots" className="cursor-pointer self-start">
