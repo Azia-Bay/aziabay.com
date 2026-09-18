@@ -109,7 +109,7 @@ export default function DSTGPage() {
       </div>
 
       <div className="flex flex-col gap-6">
-        <a id="screenshots" href="#screenshots" className="cursor-pointer group px-4 py-2 bg-foreground text-background">
+        <a id="screenshots" href="#screenshots" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
           <h1 className="relative inline text-2xl font-bold">
             Screenshots
 
@@ -117,10 +117,10 @@ export default function DSTGPage() {
           </h1>
         </a>
 
-        <div className="ml-8 flex flex-col gap-4">
+        <div className="grid grid-cols-2 gap-4 mx-4">
           {SCREENSHOTS.map((screenshot, index) => {
-            return <button key={index} onClick={() => openModal(`${TITLE} screenshot ${index + 1}`, <Image className="object-contain pixelated" src={screenshot.src} alt={screenshot.alt} fill unoptimized />)} className="cursor-pointer group w-3/5">
-              <Image className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated" src={screenshot.src} alt={screenshot.alt} width={0} height={0} unoptimized />
+            return <button key={index} onClick={() => openModal(`${TITLE} screenshot ${index + 1}`, <Image className="object-contain pixelated" src={screenshot.src} alt={screenshot.alt} fill unoptimized />)} className="cursor-pointer group">
+              <Image className="w-full h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated" src={screenshot.src} alt={screenshot.alt} width={0} height={0} unoptimized />
             </button>
           })}
         </div>
