@@ -157,27 +157,43 @@ export default function DSTGPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6">
-        <a id="credits" href="#credits" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
-          <h1 className="relative inline text-2xl font-bold">
-            Credits
+      <div className="flex flex-row gap-4">
+        <div className="flex-1 flex flex-col gap-6">
+          <a id="credits" href="#credits" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
+            <h1 className="relative inline text-2xl font-bold">
+              Credits
 
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
-          </h1>
-        </a>
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+            </h1>
+          </a>
 
-        <div className="flex flex-col gap-4">
-          {CREDITS.map((credit, index) => {
-            return <div key={index} className="grid grid-cols-2 items-center gap-12">
-              <h3 className="text-end text-xl">{credit.category}</h3>
+          <div className="flex-1 flex-col gap-4">
+            {CREDITS.map((credit, index) => {
+              return <div key={index} className="grid grid-cols-2 items-center gap-12">
+                <h3 className="text-end text-xl">{credit.category}</h3>
 
-              <div className="flex flex-col">
-                {credit.names.map((credit, jndex) => {
-                  return <div key={jndex}>{credit}</div>
-                })}
+                <div className="flex flex-col">
+                  {credit.names.map((credit, jndex) => {
+                    return <div key={jndex}>{credit}</div>
+                  })}
+                </div>
               </div>
-            </div>
-          })}
+            })}
+          </div>
+        </div>
+
+        <div className="flex-1 flex flex-col gap-6">
+          <a id="tech" href="#tech" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
+            <h1 className="relative inline text-2xl font-bold">
+              Tech
+
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+            </h1>
+          </a>
+
+          <span>Made with <a href="https://godotengine.org/" target="_blank" className="cursor-pointer underline underline-offset-3">Godot 4.2</a>.</span>
+
+          <a href="https://github.com/Azia-Bay/DSTG" target="_blank" className="cursor-pointer underline underline-offset-3">View source.</a>
         </div>
       </div>
     </div>
