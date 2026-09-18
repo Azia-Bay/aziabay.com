@@ -193,7 +193,7 @@ export default function DSTGPage() {
 
           <span>Made with <a href="https://godotengine.org/" target="_blank" className="cursor-pointer underline underline-offset-3">Godot 4.2</a>.</span>
 
-          <a href="https://github.com/Azia-Bay/DSTG" target="_blank" className="cursor-pointer underline underline-offset-3">View source.</a>
+          <span><a href="https://github.com/Azia-Bay/DSTG" target="_blank" className="cursor-pointer underline underline-offset-3">View source.</a></span>
         </div>
       </div>
     </div>
