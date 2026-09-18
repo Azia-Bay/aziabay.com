@@ -107,11 +107,11 @@ export default function DSTGPage() {
             </h1>
           </a>
 
-          <div className="ml-4 flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             {REVIEWS.map((review, index) => {
               return <div key={index} className="flex flex-col gap-1">
                 <div className="text-xl">{review.quote}</div>
-                <div className="ml-4 text-sm">&mdash; <i>{review.author}</i></div>
+                <div className="ml-8 text-sm">&mdash; <i>{review.author}</i></div>
               </div>
             })}
           </div>
