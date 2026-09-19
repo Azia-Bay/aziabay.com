@@ -27,7 +27,7 @@ export default function GamesButton({ onClick, state, date, title, genres, tagli
 
   return (
     <div className="relative overflow-hidden shrink-0 min-h-44 flex flex-row">
-      <button onClick={onClick} className="cursor-pointer group relative overflow-hidden w-125 px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-dark border-double bg-light text-dark flex flex-col items-start">
+      <button onClick={onClick} className="cursor-pointer group relative overflow-hidden w-125 min-w-1/2 px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-dark border-double bg-light text-dark flex flex-col items-start">
         <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
         
         <div className="z-10 flex flex-row items-center gap-1 text-sm">
