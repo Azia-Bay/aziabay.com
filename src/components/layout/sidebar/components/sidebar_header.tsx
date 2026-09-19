@@ -1,4 +1,4 @@
-import { AUTHOR_NAME } from "@/lib/consts";
+import { SITE_NAME } from "@/lib/consts";
 
 import { useEffect, useState } from "react";
 
@@ -26,7 +26,7 @@ export default function SidebarHeader() {
               <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[1px_1px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
 
               <div className="relative text-dark text-lg font-bold uppercase">
-                {AUTHOR_NAME}
+                {SITE_NAME}
                 
                 <span className="absolute left-0 bottom-1 w-full h-px bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
               </div>
