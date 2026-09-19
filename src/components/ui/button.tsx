@@ -9,9 +9,10 @@ type ButtonProps = {
   onClick?: () => void;
   src?: string;
   alt?: string;
+  eager?: boolean;
 };
 
-export default function Button({ children, href, target, onClick, src, alt }: ButtonProps) {
+export default function Button({ children, href, target, onClick, src, alt, eager }: ButtonProps) {
   var px = (src && alt && children && "px-2") || "px-1"
   var pr = (src && alt && children && "pr-4") || ""
   
@@ -22,7 +23,7 @@ export default function Button({ children, href, target, onClick, src, alt }: Bu
       <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
 
       {src && alt &&
-        <Image src={src} alt={alt} className="z-10 pixelated" width={icon_size} height={icon_size} unoptimized loading="eager" />
+        <Image src={src} alt={alt} className="z-10 pixelated" width={icon_size} height={icon_size} unoptimized loading={eager ? "eager" : undefined} />
       }
 
       {children &&
