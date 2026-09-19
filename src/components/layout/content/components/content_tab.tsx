@@ -20,7 +20,7 @@ export default function ContentTab({ children, onClick }: ContentTabProps) {
       <span className={`absolute inset-0 ${isHovered ? "translate-y-3/4" : "translate-y-full"} transition-transform duration-200 ease-out pixelated bg-size-[1px_1px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]`} />
 
       {children &&
-        <span className="relative z-10">
+        <span className="relative z-10 overflow-clip max-w-50 whitespace-nowrap inline-block text-ellipsis">
           {children}
 
           <span className={`absolute left-0 bottom-0 w-full h-px bg-dark ${isHovered ? "scale-x-100" : "scale-x-0"} transition-transform duration-150 ease-out`} />
