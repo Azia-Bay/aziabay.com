@@ -79,7 +79,7 @@ export default function DSTGPage() {
   const { openModal } = useModal()!;
 
   return (
-    <div className="scrollbar scroll-smooth overflow-y-auto h-full min-h-0 pr-4 flex flex-col gap-12">
+    <div className="scrollbar scroll-smooth overflow-y-auto h-full min-h-0 pr-4 flex flex-col gap-6">
       <video controls className="self-center w-full h-auto max-w-200 rounded-lg border-double border-4 border-foreground" preload="metadata">
         <source src="content/panels/games/pages/dstg/teaser.mp4" type="video/mp4" />
 
@@ -171,7 +171,9 @@ export default function DSTGPage() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div id="tech-stack" className="mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
+          <div className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
+          
           <span>Made with <a href="https://godotengine.org/" target="_blank" className="cursor-pointer underline underline-offset-3">Godot 4.2</a>.</span>
 
           <span><a href="https://github.com/Azia-Bay/DSTG" target="_blank" className="cursor-pointer underline underline-offset-3">View source.</a></span>
