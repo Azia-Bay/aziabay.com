@@ -19,6 +19,8 @@
   
   --color-light: var(--light);
   --color-dark: var(--dark);
+
+  --breakpoint-3xl: 1664px;
 }
 
 body {
