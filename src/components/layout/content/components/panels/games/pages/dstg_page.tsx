@@ -105,22 +105,24 @@ export default function DSTGPage() {
       </a>
 
       <div className="flex flex-row gap-4">
-        <div className="flex-1 flex flex-col gap-6">
-          <a id="description" href="#description" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
-            <h1 className="relative inline text-2xl font-bold">
-              Description
+        <div id="description" className="flex-1 m-8 p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6 -rotate-5">
+          <div className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
 
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          <a href="#description" className="cursor-pointer group self-center">
+            <h1 className="relative text-2xl font-bold">
+              Don't Start the Game
+
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
             </h1>
           </a>
 
-          <div className="text-xl text-justify">{DESCRIPTION}</div>
+          <p className="text-xl text-justify">{DESCRIPTION}</p>
 
           <i>{STATUS} {DATE}</i>
 
           <div className="flex flex-row gap-1.5">
             {GENRES.map((genre, index) => (
-              <div key={index} className="px-3 py-1 rounded-sm bg-foreground text-background text-sm lowercase">
+              <div key={index} className="px-3 py-1 rounded-sm bg-dark text-light text-sm lowercase">
                 {genre}
               </div>
             ))}
