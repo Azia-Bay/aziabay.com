@@ -201,7 +201,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="mx-12 mb-10 flex flex-col">
+    <div className="self-start mx-12 mt-5 mb-10 flex flex-col">
       <audio ref={audioRef} src={src} loop />
 
       <div className="flex flex-row items-center">

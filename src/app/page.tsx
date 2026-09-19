@@ -19,12 +19,10 @@ export default function Home() {
 
       <div className="flex-1 flex flex-col">
         <Content tab={tab} onTabChange={setTeb} />
-
-        <div className="flex flex-row items-center">
-          <MusicPlayer src="music/late_night_radio.mp3" title="Late Night Radio by Kevin Macleod" />
-          <Socials />
-        </div>
+        <MusicPlayer src="music/late_night_radio.mp3" title="Late Night Radio by Kevin Macleod" />
       </div>
+
+      <Socials />
     </div>
   );
 }
