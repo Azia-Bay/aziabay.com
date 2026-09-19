@@ -80,13 +80,15 @@ export default function DSTGPage() {
 
   return (
     <div className="scrollbar scroll-smooth overflow-y-auto h-full min-h-0 pr-4 flex flex-col gap-6">
-      <video controls className="self-center w-full h-auto max-w-200 rounded-lg border-double border-4 border-foreground" preload="metadata">
-        <source src="content/panels/games/pages/dstg/teaser.mp4" type="video/mp4" />
+      <div id="teaser" className="self-center rounded-lg border-double border-4 border-foreground">
+        <video controls className="w-full h-auto max-w-200 rounded-lg" preload="metadata">
+          <source src="content/panels/games/pages/dstg/teaser.mp4" type="video/mp4" />
 
-        Your browser does not support the video tag.
-      </video>
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-      <a href={LINK} target="_blank" className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground">
+      <a id="play-button" href={LINK} target="_blank" className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground">
         <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,transparent_25%_50%)]" />
 
         <div className="relative z-10 text-background text-2xl font-bold uppercase">
@@ -173,7 +175,7 @@ export default function DSTGPage() {
 
         <div id="tech-stack" className="mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
           <div className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
-          
+
           <span>Made with <a href="https://godotengine.org/" target="_blank" className="cursor-pointer underline underline-offset-3">Godot 4.2</a>.</span>
 
           <span><a href="https://github.com/Azia-Bay/DSTG" target="_blank" className="cursor-pointer underline underline-offset-3">View source.</a></span>
