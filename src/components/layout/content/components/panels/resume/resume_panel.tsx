@@ -10,7 +10,7 @@ import VolunteerismSection from "./components/resume_sections/resume_sections/vo
 
 export default function ResumePanel() {
   return (
-    <div className="scrollbar scroll-smooth overflow-y-auto w-fit h-full rounded-lg mx-auto px-10 py-16 border-4 border-dark border-double flex flex-col gap-4 bg-light text-dark sm:zoom-75 3xl:zoom-100">
+    <div className="scrollbar scroll-smooth overflow-y-auto w-fit h-full rounded-lg mx-auto px-10 py-16 border-4 border-dark border-double flex flex-col gap-4 bg-light text-dark max-2xl:zoom-75">
       <Header />
       <EducationSection />
       <TechnicalSkillsSection />

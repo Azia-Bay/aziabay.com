@@ -209,7 +209,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
           {play_button_src && <Image src={play_button_src} alt={isPlaying ? "A pixel art icon of a pause button." : "A pixel art icon of a play button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
-        <div className="overflow-clip flex-1 ml-2 -mt-6 flex flex-col">
+        <div className="overflow-clip flex-1 min-w-60 ml-2 -mt-6 flex flex-col">
           <div className={`${isPlaying ? "marquee" : ""} h-6`}>
             <span>{title}</span>
           </div>
