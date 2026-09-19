@@ -201,7 +201,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="self-start mx-12 mt-5 mb-10 flex flex-col">
+    <div className="self-start ml-7 mt-5 mb-10 flex flex-col">
       <audio ref={audioRef} src={src} loop />
 
       <div className="flex flex-row items-center">
@@ -227,7 +227,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
           {volume_button_src && <Image src={volume_button_src} alt={!muted ? "A pixel art icon of a volume button." : "A pixel art icon of a volume mute button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
         </button>
 
-        <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-20 h-4 rounded-full border-4 border-foreground border-double bg-background">
+        <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-15 h-4 rounded-full border-4 border-foreground border-double bg-background">
           <div className="h-full rounded-full bg-foreground" style={{ width: `${volume * 100}%` }} />
         </div>
       </div>
