@@ -104,8 +104,8 @@ export default function DSTGPage() {
         </div>
       </a>
 
-      <div className="flex flex-row gap-4">
-        <div id="description" className="flex-1 m-8 p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6 -rotate-5">
+      <div className="grid grid-cols-2 gap-4">
+        <div id="description" className="mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
           <div className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
 
           <a href="#description" className="cursor-pointer group self-center">
@@ -129,23 +129,16 @@ export default function DSTGPage() {
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col gap-6">
-          <a id="reviews" href="#reviews" className="cursor-pointer group px-4 py-2 bg-foreground text-background flex items-center justify-center">
-            <h1 className="relative inline text-2xl font-bold">
-              Reviews
+        <div id="reviews" className="mb-auto flex flex-col gap-4">
+          {REVIEWS.map((review, index) => {
+            return <div key={index} className="px-8 py-6 pt-6 border-4 border-dark bg-light text-dark flex flex-col gap-1">
+              <div className="self-center w-6 h-6 mb-3 bg-dark rounded-full" />
 
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
-            </h1>
-          </a>
-
-          <div className="flex flex-col gap-4">
-            {REVIEWS.map((review, index) => {
-              return <div key={index} className="flex flex-col gap-1">
-                <div className="text-xl text-justify">{review.quote}</div>
-                <div className="ml-8 text-sm">&mdash; <i>{review.author}</i></div>
-              </div>
-            })}
-          </div>
+              <div className="text-xl text-justify">{review.quote}</div>
+              
+              <div className="ml-4 text-sm">&mdash; <i>{review.author}</i></div>
+            </div>
+          })}
         </div>
       </div>
 
