@@ -18,10 +18,10 @@ export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
     resume: "Resume",
     contact: "Contact",
 
-    games_page_bruit: "Bruit",
-    games_page_dstg: "Don't Start the Game",
+    games_page_bruit: "★",
+    games_page_dstg: "★",
 
-    blog_page_aziabay: "Devlog: The Creation of aziabay.com"
+    blog_page_aziabay: "★"
   };
 
   const orderedTabs = [tab, ...TABS.filter((t) => t !== tab)];

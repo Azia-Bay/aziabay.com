@@ -29,8 +29,8 @@ export default function BlogButton({onClick, date, title, tagline, wordCount, sr
   var min = Math.ceil(wordCount / AVG_NONFICTION_WORDS_PER_MIN);
 
   return (
-    <div className="relative overflow-hidden cursor-pointer shrink-0 min-h-31.25 flex flex-row">
-      <button onClick={onClick} className="cursor-pointer group relative overflow-hidden w-125 min-w-1/2 px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-dark border-double bg-light text-dark flex flex-col items-start">
+    <div className="relative overflow-hidden cursor-pointer shrink-0 h-fit min-h-31.25 flex flex-row">
+      <button onClick={onClick} className="cursor-pointer group relative overflow-hidden w-50 min-w-1/2 px-4 py-2 rounded-lg rounded-r-none border-4 border-r-0 border-dark border-double bg-light text-dark flex flex-col items-start">
         <span className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,var(--light)_25%_50%)]" />
 
         <div className="z-10 flex flex-row items-center gap-1 text-sm">
@@ -40,7 +40,7 @@ export default function BlogButton({onClick, date, title, tagline, wordCount, sr
         </div>
 
         <div className="relative z-10">
-          <div className="text-lg font-bold uppercase">{title}</div>
+          <div className="text-start text-lg font-bold uppercase">{title}</div>
 
           <span className="absolute origin-left left-0 bottom-0.5 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
         </div>

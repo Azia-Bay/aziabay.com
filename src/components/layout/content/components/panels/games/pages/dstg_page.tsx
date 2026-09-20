@@ -86,7 +86,7 @@ export default function DSTGPage() {
 
   return (
     <div
-      className="scrollbar scroll-smooth overflow-y-auto h-full min-h-0 pr-4 flex flex-col gap-6">
+      className="scrollbar scroll-smooth overflow-y-auto min-w-0 h-full min-h-0 pr-4 flex flex-col gap-6">
       <div
         id="teaser"
         className="self-center rounded-lg border-double border-4 border-foreground">
@@ -110,38 +110,48 @@ export default function DSTGPage() {
         <span
           className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,transparent_25%_50%)]" />
 
-        <div className="relative z-10 text-background text-2xl font-bold uppercase">
+        <div
+          className="relative z-10 text-background text-2xl font-bold uppercase">
           Play free on itch.io
 
-          <span className="absolute left-0 bottom-0.5 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          <span
+            className="absolute left-0 bottom-0.5 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
         </div>
       </a>
 
       <div
-        className="grid grid-cols-2 gap-4">
+        className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:gap-4 xl:grid xl:grid-cols-2 xl:gap-4">
         <div
           id="description"
-          className="mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
+          className="max-xl:w-fit mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
           <div
             className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
 
           <a
             href="#description"
             className="cursor-pointer group self-center">
-            <h1 className="relative text-2xl font-bold">
+            <h1
+              className="relative text-2xl font-bold">
               {TITLE}
 
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+              <span
+                className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
             </h1>
           </a>
 
-          <p className="text-xl text-justify">{DESCRIPTION}</p>
+          <p
+            className="text-xl text-justify">
+            {DESCRIPTION}
+          </p>
 
           <i>{STATUS} {DATE}</i>
 
-          <div className="flex flex-row gap-1.5">
+          <div
+            className="flex flex-row gap-1.5">
             {GENRES.map((genre, index) => (
-              <div key={index} className="px-3 py-1 rounded-sm bg-dark text-light text-sm lowercase">
+              <div
+                key={index}
+                className="px-3 py-1 rounded-sm bg-dark text-light text-sm lowercase">
                 {genre}
               </div>
             ))}
@@ -150,16 +160,23 @@ export default function DSTGPage() {
 
         <div
           id="reviews"
-          className="mb-auto flex flex-col gap-4">
+          className="mb-auto flex flex-col max-xl:items-center max-xl:gap-2 xl:gap-4">
           {REVIEWS.map((review, index) => {
             return <div
               key={index}
-              className="px-8 py-6 pt-6 border-4 border-dark bg-light text-dark flex flex-col gap-1">
-              <div className="self-center w-6 h-6 mb-3 bg-dark rounded-full" />
+              className="max-xl:w-fit px-8 py-6 pt-6 border-4 border-dark bg-light text-dark flex flex-col gap-1">
+              <div
+                className="self-center w-6 h-6 mb-3 bg-dark rounded-full" />
 
-              <div className="text-xl text-justify">{review.quote}</div>
+              <div
+                className="text-xl text-justify">
+                  {review.quote}
+                </div>
               
-              <div className="ml-4 text-sm">&mdash; <i>{review.author}</i></div>
+              <div
+                className="ml-4 text-sm">
+                  &mdash; <i>{review.author}</i>
+              </div>
             </div>
           })}
         </div>
@@ -167,7 +184,7 @@ export default function DSTGPage() {
 
       <div
         id="screenshots"
-        className="mx-2 grid grid-cols-2 gap-6">
+        className="mx-4 max-xl:flex max-xl:flex-col max-xl:items-center max-xl:gap-4 xl:grid xl:grid-cols-2 xl:gap-6">
         {SCREENSHOTS.map((screenshot, index) => {
           return <button
             key={index}
@@ -194,11 +211,12 @@ export default function DSTGPage() {
         })}
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:gap-2 xl:grid xl:grid-cols-2 xl:gap-4">
         <div
           id="credits"
-          className="mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
-          <div className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
+          className="max-xl:w-fit mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
+          <div
+            className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
 
           <a
             href="#credits"
@@ -206,23 +224,28 @@ export default function DSTGPage() {
             <h1 className="relative text-2xl font-bold">
               Credits
 
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+              <span
+                className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
             </h1>
           </a>
 
-          <div className="flex flex-col gap-2">
+          <div
+            className="flex flex-col gap-2">
             {CREDITS.map((credit, index) => {
               return <div
                 key={index}
                 className="grid grid-cols-2 items-center gap-8">
-                <h3 className="text-end text-xl">
+                <h3
+                  className="text-end text-xl">
                   {credit.category}
                 </h3>
 
-                <div className="flex flex-col">
+                <div
+                  className="flex flex-col">
                   {credit.names.map((credit, jndex) => {
                     return <div key={jndex}>
-                      <div className={credit === AUTHOR_NAME ? "italic" : ""}>
+                      <div
+                        className={credit === AUTHOR_NAME ? "italic" : ""}>
                         {credit}
                       </div>
                     </div>
@@ -235,8 +258,9 @@ export default function DSTGPage() {
 
         <div
           id="tech-stack"
-          className="mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
-          <div className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
+          className="max-xl:w-fit mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
+          <div
+            className="self-center w-6 h-6 mb-6 bg-dark rounded-full" />
 
           <span>
             Made with&nbsp;
