@@ -23,7 +23,7 @@ export default function ContentTab({ children, onClick }: ContentTabProps) {
         <span className="relative z-10">
           {children}
 
-          <span className={`absolute left-0 bottom-1 w-full h-px bg-dark ${isHovered ? "scale-x-100" : "scale-x-0"} transition-transform duration-150 ease-out`} />
+          <span className={`absolute left-0 bottom-0 w-full h-px bg-dark ${isHovered ? "scale-x-100" : "scale-x-0"} transition-transform duration-150 ease-out`} />
         </span>
       }
     </button>
