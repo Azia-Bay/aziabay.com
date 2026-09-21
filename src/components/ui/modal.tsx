@@ -19,7 +19,7 @@ export default function Modal({ onClose, title, children }: ModalProps) {
   }, [onClose]);
 
   return createPortal(
-    <div onClick={onClose} className="cursor-pointer absolute left-0 top-0 z-50 w-screen h-screen p-10">
+    <div onClick={onClose} className="cursor-pointer fixed left-0 top-0 z-50 w-screen h-screen p-10">
       <div onClick={(e) => e.stopPropagation()} className="cursor flex-1 w-full h-full rounded-lg border-4 border-foreground border-double bg-background flex flex-col">
         <div className="border-b-4 border-foreground border-double flex flex-row justify-between">
           <div className="px-4 py-2 text-xl font-bold">
