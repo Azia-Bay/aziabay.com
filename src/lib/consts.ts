@@ -4,6 +4,10 @@ export const SITE_NAME = "AZIABAY";
 export const SITE_AUTHOR = "Azia Bay-Asen";
 export const SITE_DESCRIPTION = "Check out video games by me! — Azia Bay-Asen, American indie developer & software engineer";
 
+export const SITE_ABOUT = "An American indie game developer & software engineer from the tropics. Håfa adai!";
+export const SITE_START_YEAR = 2022;
+export const SITE_END_YEAR = 2026;
+
 export const DEFAULT_TAB = "games";
 
 export const THEME_MUSIC = "music/late_night_radio.mp3";
