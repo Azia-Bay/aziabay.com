@@ -5,7 +5,6 @@ import { Philosopher } from "next/font/google";
 import { SITE_NAME } from "@/lib/consts";
 
 import Providers from "@/lib/providers"
-
 import FogReveal from "@/components/layout/fog_reveal";
 
 import "./globals.css";
@@ -23,10 +22,16 @@ const philosopher = Philosopher({
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning className={philosopher.className}>
-      <body className="cursor">
+    <html
+      lang="en"
+      className={philosopher.className}
+      suppressHydrationWarning>
+      <body
+        className="cursor">
         <Providers>
-          <FogReveal>{children}</FogReveal>
+          <FogReveal>
+            {children}
+          </FogReveal>
         </Providers>
       </body>
     </html>
