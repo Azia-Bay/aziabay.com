@@ -40,15 +40,15 @@ textarea {
 }
 
 .cursor {
-  cursor: url('/cursor.png') 0 3, auto;
+  cursor: url("/cursor.png") 0 3, auto;
 }
 
 .cursor-pointer {
-  cursor: url('/cursor_pointer.png') 0 3, pointer;
+  cursor: url("/cursor_pointer.png") 0 3, pointer;
 }
 
 .cursor-text {
-  cursor: url('/cursor_text.png') 0 3, text;
+  cursor: url("/cursor_text.png") 0 3, text;
 }
 
 .scrollbar::-webkit-scrollbar {
