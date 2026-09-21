@@ -1,5 +1,7 @@
 export default function BruitPage() {
   return (
-    <div>Bruit</div>
+    <div>
+      Bruit
+    </div>
   );
 }
