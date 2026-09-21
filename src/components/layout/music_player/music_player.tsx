@@ -38,19 +38,25 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
 
   if (mounted) {
     if (theme === "dark") {
-      play_button_src = isPlaying ? "music_player/pause_icon.png" : "music_player/play_icon.png";
-      volume_button_src = !muted ? "music_player/volume_icon.png" : "music_player/volume_icon_muted.png";
+      play_button_src = isPlaying ? "music_player/pause_icon.png" :
+                                    "music_player/play_icon.png";
+      volume_button_src = muted   ? "music_player/volume_icon_muted.png" :
+                                    "music_player/volume_icon.png";
     }
     else {
-      play_button_src = isPlaying ? "music_player/pause_icon_light.png" : "music_player/play_icon_light.png";
-      volume_button_src = !muted ? "music_player/volume_icon_light.png" : "music_player/volume_icon_muted_light.png";
+      play_button_src = isPlaying ? "music_player/pause_icon_light.png" :
+                                    "music_player/play_icon_light.png";
+      volume_button_src = muted   ? "music_player/volume_icon_muted_light.png" :
+                                    "music_player/volume_icon_light.png";
     }
   }
 
   useEffect(() => {
     const audio = audioRef.current;
 
-    if (!audio) return;
+    if (!audio) {
+      return;
+    }
     
     function setAudioDuration() {
       setDuration(audio!.duration);
@@ -73,13 +79,17 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   }, []);
 
   useEffect(() => {
-    if (!isDragging) return;
+    if (!isDragging) {
+      return;
+    }
 
     function handleMouseMove(e: MouseEvent) {
       const audio = audioRef.current;
-      
       const time = calculateSeekTime(e.clientX);
-      if (time !== null && audio) audio.currentTime = time;
+      
+      if (audio && time !== null) {
+        audio.currentTime = time;
+      }
     }
 
     function handleMouseUp() {
@@ -96,13 +106,15 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   }, [isDragging, duration]);
 
   useEffect(() => {
-    if (!isDraggingVolume) return;
+    if (!isDraggingVolume) {
+      return;
+    }
 
     function handleMouseMove(e: MouseEvent) {
       const audio = audioRef.current;
-
       const volume = calculateSeekVolume(e.clientX);
-      if (volume !== null && audio) {
+
+      if (audio && volume !== null) {
         setVolume(volume);
         audio.volume = volume;
       }
@@ -124,7 +136,9 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   function togglePlay() {
     const audio = audioRef.current;
 
-    if (!audio) return;
+    if (!audio) {
+      return;
+    }
 
     isPlaying ? audio.pause() : audio.play();
     
@@ -134,7 +148,9 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   function calculateSeekTime(clientX: number) {
     const bar = barRef.current;
     
-    if (!bar || !duration) return null;
+    if (!bar || !duration) {
+      return null;
+    }
 
     const rect = bar.getBoundingClientRect();
     const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
@@ -145,19 +161,22 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   }
 
   function handleSeek(e: React.MouseEvent<HTMLDivElement>) {
-    const audio = audioRef.current;
-
     setIsDragging(true);
 
+    const audio = audioRef.current;
     const time = calculateSeekTime(e.clientX);
     
-    if (time !== null && audio) audio.currentTime = time;
+    if (audio && time !== null) {
+      audio.currentTime = time;
+    }
   }
 
   function toggleMute() {
     const audio = audioRef.current;
 
-    if (!audio) return;
+    if (!audio) {
+      return;
+    }
 
     audio.muted = !audio.muted;
     setMuted(!muted);
@@ -166,7 +185,9 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   function calculateSeekVolume(clientX: number) {
     const volumeBar = volumeBarRef.current;
     
-    if (!volumeBar) return null;
+    if (!volumeBar) {
+      return null;
+    }
 
     const rect = volumeBar.getBoundingClientRect();
     const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
@@ -177,20 +198,21 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   }
 
   function handleVolumeChange(e: React.MouseEvent<HTMLDivElement>) {
-    const audio = audioRef.current;
-
     setIsDraggingVolume(true);
 
+    const audio = audioRef.current;
     const volume = calculateSeekVolume(e.clientX);
     
-    if (volume !== null && audio) {
+    if (audio && volume !== null) {
       setVolume(volume);
       audio.volume = volume;
     }
   }
 
   function formatTime(secs: number) {
-    if (isNaN(secs)) return "0:00";
+    if (isNaN(secs)) {
+      return "0:00";
+    }
 
     const m = Math.floor(secs / 60);
     const s = Math.floor(secs % 60);
@@ -201,37 +223,83 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="max-lg:self-center lg:self-start lg:ml-7 max-lg:mt-16 lg:mt-5 lg:mb-10 flex flex-col -max-lg:gap-1">
-      <audio ref={audioRef} src={src} loop />
+    <div
+      className="self-center lg:self-start lg:ml-7 flex flex-col -max-lg:gap-1">
+      <audio
+        ref={audioRef}
+        src={src}
+        loop />
 
-      <div className="flex max-sm:flex-col sm:flex-row items-center">
-        <div className="max-sm:-ml-4 flex flex-row items-center">
-          <button onClick={togglePlay} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-            {play_button_src && <Image src={play_button_src} alt={isPlaying ? "A pixel art icon of a pause button." : "A pixel art icon of a play button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+      <div
+        className="flex flex-col sm:flex-row items-center sm:gap-4">
+        <div
+          className="max-sm:-ml-4 flex flex-row items-center gap-2">
+          <button
+            onClick={togglePlay}
+            className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
+            {play_button_src &&
+              <Image
+                src={play_button_src}
+                alt={isPlaying ? "A pixel art icon of a pause button." :
+                                 "A pixel art icon of a play button."}
+                className="pixelated"
+                width={16}
+                height={16}
+                unoptimized
+                loading="eager" />
+            }
           </button>
 
-          <div className="overflow-clip flex-1 min-w-60 ml-2 -mt-6 flex flex-col">
-            <div className={`${isPlaying ? "marquee" : ""} h-6`}>
-              <span>{title}</span>
+          <div
+            className="overflow-hidden w-fit -mt-6 flex flex-col">
+            <div
+              className={`${isPlaying ? "marquee" : ""} h-6`}>
+              <span>
+                {title}
+              </span>
             </div>
             
-            <div ref={barRef} onMouseDown={handleSeek} className="cursor-pointer h-6 rounded-lg border-4 border-foreground border-double bg-background">
-              <div className="h-full bg-foreground" style={{ width: `${progress}%` }} />
+            <div
+              ref={barRef}
+              onMouseDown={handleSeek}
+              className="cursor-pointer h-6 rounded-lg border-4 border-foreground border-double bg-background">
+              <div
+                className="h-full bg-foreground"
+                style={{ width: `${progress}%` }} />
             </div>
           </div>
         </div>
 
-        <div className="lg:ml-4 mx-4 text-sm">
+        <div
+          className="text-sm">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
 
-        <div className="max-sm:-ml-4 max-sm:mt-3 flex flex-row items-center">
-          <button onClick={toggleMute} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-            {volume_button_src && <Image src={volume_button_src} alt={!muted ? "A pixel art icon of a volume button." : "A pixel art icon of a volume mute button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+        <div
+          className="max-sm:-ml-4 max-sm:mt-3 flex flex-row items-center">
+          <button
+            onClick={toggleMute}
+            className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
+            {volume_button_src &&
+              <Image
+                src={volume_button_src}
+                alt={!muted ? "A pixel art icon of a volume button." :
+                              "A pixel art icon of a volume mute button."}
+                className="pixelated"
+                width={16}
+                height={16}
+                unoptimized
+                loading="eager" />
+            }
           </button>
 
-          <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer max-sm:w-30 sm:w-15 h-4 rounded-full border-4 border-foreground border-double bg-background">
-            <div className="h-full rounded-full bg-foreground" style={{ width: `${volume * 100}%` }} />
+          <div
+            ref={volumeBarRef}
+            onMouseDown={handleVolumeChange}
+            className="cursor-pointer w-30 sm:w-15 h-4 rounded-full border-4 border-foreground border-double bg-background">
+            <div
+              className="h-full rounded-full bg-foreground"
+              style={{ width: `${volume * 100}%` }} />
           </div>
         </div>
       </div>

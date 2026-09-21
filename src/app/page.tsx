@@ -85,7 +85,7 @@ export default function Home() {
         onTabChange={onTabChange} />
 
       <div
-        className="flex-1 flex flex-col lg:flex-col-reverse">
+        className="max-lg:mt-16 lg:mb-10 flex-1 flex flex-col lg:flex-col-reverse lg:gap-5">
         <MusicPlayer
           src={THEME_MUSIC}
           title={THEME_MUSIC_DISPLAY_TEXT} />
