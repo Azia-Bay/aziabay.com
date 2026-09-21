@@ -47,9 +47,10 @@ import Socials from "@/components/layout/socials/socials";
 /*
   REFERENCES:
   -----------
-  • Tailwind CSS v4 Cheat Sheet: https://www.creative-tim.com/twcomponents/cheatsheet/tailwind-css-4
   • How to Decide When to Use "use client": https://dev.to/tjcoding/how-to-decide-when-to-use-use-client-2dci
+  • Tailwind CSS v4 Cheat Sheet: https://www.creative-tim.com/twcomponents/cheatsheet/tailwind-css-4
   • Automatically add display flex when flex-col or flex-row class is added #8665: https://github.com/tailwindlabs/tailwindcss/discussions/8665
+  • Send emails with Next.js: https://resend.com/docs/send-with-nextjs
 */
 
 export default function Home() {
