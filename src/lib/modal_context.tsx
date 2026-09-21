@@ -1,25 +1,25 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState } from "react";
 
 import Modal from "@/components/ui/modal"
 
 type ModalContext = {
-  openModal: (title: string, content?: ReactNode) => void;
+  openModal: (title: string, content: React.ReactNode) => void;
   closeModal: () => void;
 };
 
-const MODAL_CONTEXT = createContext<ModalContext | null>(null);
+const modal_context = createContext<ModalContext | null>(null);
 
 type ModalProviderProps = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
 export function ModalProvider({ children }: ModalProviderProps) {
   const [title, setTitle] = useState<string | null>(null);
-  const [content, setContent] = useState<ReactNode | null>(null);
+  const [content, setContent] = useState<React.ReactNode | null>(null);
 
-  function openModal(title: string, content?: ReactNode) {
+  function openModal(title: string, content: React.ReactNode) {
     setTitle(title);
     setContent(content);
   }
@@ -30,13 +30,21 @@ export function ModalProvider({ children }: ModalProviderProps) {
   }
 
   return (
-    <MODAL_CONTEXT.Provider value={{ openModal, closeModal }}>
+    <modal_context.Provider
+      value={{ openModal, closeModal }}>
       {children}
-      {content && <Modal onClose={closeModal} title={title}>{content}</Modal>}
-    </MODAL_CONTEXT.Provider>
+
+      {title && content &&
+        <Modal
+          onClose={closeModal}
+          title={title}>
+          {content}
+        </Modal>
+      }
+    </modal_context.Provider>
   );
 }
 
 export function useModal() {
-  return useContext(MODAL_CONTEXT);
+  return useContext(modal_context);
 }
