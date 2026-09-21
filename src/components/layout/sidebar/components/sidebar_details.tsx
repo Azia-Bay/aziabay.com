@@ -10,13 +10,24 @@ type SidebarDetailsProps = {
 
 export default function SidebarDetails({ onTabChange }: SidebarDetailsProps) {
   return (
-    <div className="mt-auto flex flex-col">
+    <div
+      className="mt-auto flex flex-col">
       <LightSwitch />
 
-      <div className="flex flex-row gap-1">
-        <TextButton onClick={() => { onTabChange("blog_page_aziabay") }}>How did I make this site?</TextButton>
+      <div
+        className="flex flex-row gap-1">
+        <TextButton
+          onClick={() => { onTabChange("blog_page_aziabay") }}>
+          How did I make this site?
+        </TextButton>
+        
         //
-        <TextButton href={LINK_TO_SITE_SOURCE} target="_blank">source code</TextButton>
+        
+        <TextButton
+          href={LINK_TO_SITE_SOURCE}
+          target="_blank">
+          source code
+        </TextButton>
       </div>
     </div>
   );
