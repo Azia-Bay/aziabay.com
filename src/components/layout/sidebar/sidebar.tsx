@@ -16,7 +16,7 @@ export default function Sidebar({ onTabChange }: SidebarProps) {
   return (
     <div
       id="sidebar"
-      className="self-center lg:overflow-y-hidden w-125 lg:min-w-100 max-w-full lg:max-w-1/3 lg:h-screen p-4 pb-0 flex flex-col items-center gap-4">
+      className="self-center lg:overflow-y-hidden w-125 lg:min-w-100 max-w-full lg:max-w-1/3 lg:h-full p-4 pb-0 flex flex-col items-center gap-4">
       <Header />
       <Divider />
       <About />
