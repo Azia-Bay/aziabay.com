@@ -230,18 +230,18 @@ export default function DSTGPage() {
           </a>
 
           <div
-            className="flex flex-col gap-2">
+            className="flex flex-col max-sm:gap-4 sm:gap-2">
             {CREDITS.map((credit, index) => {
               return <div
                 key={index}
-                className="grid grid-cols-2 items-center gap-8">
+                className="max-sm:flex max-sm:flex-col items-center sm:grid sm:grid-cols-2 max-sm:gap-2 sm:gap-8">
                 <h3
-                  className="text-end text-xl">
+                  className="max-sm:text-center sm:text-end text-xl">
                   {credit.category}
                 </h3>
 
                 <div
-                  className="flex flex-col">
+                  className="flex flex-col max-sm:items-center">
                   {credit.names.map((credit, jndex) => {
                     return <div key={jndex}>
                       <div
