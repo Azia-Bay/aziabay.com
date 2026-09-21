@@ -2,7 +2,7 @@ import { Social } from "@/lib/types";
 
 export const SITE_NAME = "AZIABAY";
 export const SITE_AUTHOR = "Azia Bay-Asen";
-export const SITE_DESCRIPTION = "";
+export const SITE_DESCRIPTION = "Check out video games by me! — Azia Bay-Asen, American indie developer & software engineer";
 
 export const DEFAULT_TAB = "games";
 
