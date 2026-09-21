@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <div
-      className="lg:h-screen flex flex-col lg:flex-row">
+      className="lg:h-screen max-lg:mb-10 flex flex-col lg:flex-row">
       <Sidebar
         onTabChange={onTabChange} />
 
