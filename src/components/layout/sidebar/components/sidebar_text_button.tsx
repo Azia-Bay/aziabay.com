@@ -9,15 +9,21 @@ type SidebarTextButtonProps = {
 
 export default function SidebarTextButton({ children, href, target, onClick }: SidebarTextButtonProps) {
   var ele = (
-    <button onClick={onClick} className="cursor-pointer hover:underline underline-offset-2">
+    <button
+      onClick={onClick}
+      className="cursor-pointer hover:underline underline-offset-2">
       {children}
     </button>
   );
 
-  if (!href) return ele;
+  if (!href) {
+    return ele;
+  }
 
   return (
-    <a href={href} target={target}>
+    <a
+      href={href}
+      target={target}>
       {ele}
     </a>
   );
