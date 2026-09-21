@@ -5,7 +5,7 @@ import { Philosopher } from "next/font/google";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/consts";
 
 import Providers from "@/lib/providers"
-import FogReveal from "@/components/layout/fog_reveal";
+import FogReveal from "@/components/vfx/fog_reveal";
 
 import "./globals.css";
 

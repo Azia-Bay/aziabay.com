@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const BAYER_4X4 = [
   [0, 8, 2, 10],
@@ -19,9 +19,10 @@ type FogRevealProps = {
 
 export default function FogReveal({ children, cellSize = 2, duration = 1000 }: FogRevealProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
   const [canvasReady, setCanvasReady] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let start: number | null = null;
     let frameId: number;
     
@@ -40,15 +41,26 @@ export default function FogReveal({ children, cellSize = 2, duration = 1000 }: F
       const cols = Math.ceil(canvas.width / cellSize);
       const rows = Math.ceil(canvas.height / cellSize);
 
-      const fillColor = getComputedStyle(document.documentElement).getPropertyValue("--dark").trim();
+      const style = getComputedStyle(document.documentElement);
+      const fillColor = style.getPropertyValue("--dark").trim();
 
       function draw(now: number) {
         if (start === null) start = now;
 
         const elapsed = now - start;
-        const progress = Math.min((elapsed / duration) * MAX_THRESHOLD, MAX_THRESHOLD);
+        
+        const progress = Math.min(
+          MAX_THRESHOLD,
+          (elapsed / duration) * MAX_THRESHOLD
+        );
 
-        context!.clearRect(0, 0, canvas!.width, canvas!.height);
+        context!.clearRect(
+          0,
+          0,
+          canvas!.width,
+          canvas!.height
+        );
+
         context!.fillStyle = fillColor;
 
         for (let y = 0; y < rows; y++) {
@@ -56,7 +68,12 @@ export default function FogReveal({ children, cellSize = 2, duration = 1000 }: F
             const threshold = BAYER_4X4[y % 4][x % 4];
             
             if (threshold >= progress) {
-              context!.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+              context!.fillRect(
+                x * cellSize,
+                y * cellSize,
+                cellSize,
+                cellSize
+              );
             }
           }
         }
@@ -80,9 +97,14 @@ export default function FogReveal({ children, cellSize = 2, duration = 1000 }: F
     <div>
       {children}
 
-      {!canvasReady && <div className="fixed inset-0 z-50 bg-dark" />}
+      {!canvasReady &&
+        <div
+          className="fixed inset-0 z-50 bg-dark" />
+      }
 
-      <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-50" />
+      <canvas
+        ref={canvasRef}
+        className="pointer-events-none fixed inset-0 z-50" />
     </div>
   );
 }
