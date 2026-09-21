@@ -1,37 +1,44 @@
 import { motion } from "motion/react";
 
-import { Tab } from "@/lib/types"
+import { Tab } from "@/lib/types";
 
-import ContentTab from "@/components/layout/content/components/content_tab"
+import ContentTab from "@/components/layout/content/components/content_tab";
 
 type ContentTabsProps = {
   tab: Tab;
   onTabChange: (tab: Tab) => void;
 };
 
+const TABS: Tab[] = ["games", "blog", "resume", "contact"];
+
+const DEFAULT_LABEL = "★";
+
+const LABELS: Partial<Record<Tab, string>> = {
+  games: "Games",
+  blog: "Blog",
+  resume: "Resume",
+  contact: "Contact"
+};
+
 export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
-  const TABS: Tab[] = ["games", "blog", "resume", "contact"];
-
-  const LABELS: Record<Tab, string> = {
-    games: "Games",
-    blog: "Blog",
-    resume: "Resume",
-    contact: "Contact",
-
-    games_page_bruit: "★",
-    games_page_dstg: "★",
-
-    blog_page_aziabay: "★"
-  };
-
   const orderedTabs = [tab, ...TABS.filter((t) => t !== tab)];
 
   return (
-    <nav className="max-sm:px-2 sm:px-4 flex flex-row gap-1">
-      {orderedTabs.map((t) => (
-        <motion.div key={t} className={t === tab ? "mr-auto" : "" } layout transition={{ type: "spring", stiffness: 350, damping: 30 }}>
-          <ContentTab onClick={() => { onTabChange(t) }}>
-            {LABELS[t]}
+    <nav
+      className="px-2 sm:px-4 flex flex-row gap-1">
+      {orderedTabs.map((orderedTab) => (
+        <motion.div
+          key={orderedTab}
+          className={orderedTab === tab ? "mr-auto" : ""}
+          layout
+          transition={{
+            type: "spring",
+            stiffness: 350,
+            damping: 30
+          }}>
+          <ContentTab
+            onClick={() => { onTabChange(orderedTab) }}>
+            {LABELS[orderedTab] ?? DEFAULT_LABEL}
           </ContentTab>
         </motion.div>
       ))}
