@@ -5,6 +5,9 @@ export const AUTHOR_NAME = "Azia Bay-Asen";
 
 export const DEFAULT_TAB = "games";
 
+export const THEME_MUSIC = "music/late_night_radio.mp3";
+export const THEME_MUSIC_DISPLAY_TEXT = "Late Night Radio by Kevin Macleod";
+
 export const LINK_TO_LINKEDIN = "https://www.linkedin.com/in/aziabay/";
 export const LINK_TO_GITHUB = "https://github.com/Azia-Bay";
 export const LINK_TO_REDDIT = "https://www.reddit.com/user/AziaBay/";
