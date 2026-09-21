@@ -11,14 +11,19 @@ import MusicPlayer from "@/components/layout/music_player/music_player";
 import Socials from "@/components/layout/socials/socials";
 
 export default function Home() {
-  const [tab, setTeb] = useState<Tab>(DEFAULT_TAB);
+  const [tab, setTab] = useState<Tab>(DEFAULT_TAB);
+
+  function setTabHelper(tab: Tab) {
+    setTab(tab);
+    document.getElementById("content")?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
-    <div className="w-screen h-screen flex flex-col lg:flex-row">
-      <Sidebar onTabChange={setTeb} />
+    <div className="lg:h-screen flex max-lg:flex-col lg:flex-row">
+      <Sidebar onTabChange={setTabHelper} />
 
-      <div className="flex-1 flex flex-col">
-        <Content tab={tab} onTabChange={setTeb} />
+      <div className="flex-1 flex max-lg:flex-col-reverse lg:flex-col">
+        <Content tab={tab} onTabChange={setTabHelper} />
         <MusicPlayer src="music/late_night_radio.mp3" title="Late Night Radio by Kevin Macleod" />
       </div>
 

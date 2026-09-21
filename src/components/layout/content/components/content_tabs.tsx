@@ -27,10 +27,10 @@ export default function ContentTabs({ tab, onTabChange }: ContentTabsProps) {
   const orderedTabs = [tab, ...TABS.filter((t) => t !== tab)];
 
   return (
-    <nav className="px-4 flex flex-row gap-1">
+    <nav className="max-sm:px-2 sm:px-4 flex flex-row gap-1">
       {orderedTabs.map((t) => (
         <motion.div key={t} className={t === tab ? "mr-auto" : "" } layout transition={{ type: "spring", stiffness: 350, damping: 30 }}>
-          <ContentTab onClick={() => onTabChange(t)}>
+          <ContentTab onClick={() => { onTabChange(t) }}>
             {LABELS[t]}
           </ContentTab>
         </motion.div>

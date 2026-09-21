@@ -20,6 +20,8 @@
   --color-light: var(--light);
   --color-dark: var(--dark);
 
+  --breakpoint-2xs: 390px;
+  --breakpoint-xs: 512px;
   --breakpoint-3xl: 1664px;
 }
 

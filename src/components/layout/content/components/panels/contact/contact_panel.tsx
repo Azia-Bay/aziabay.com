@@ -5,7 +5,7 @@ import Socials from "@/components/layout/content/components/panels/contact/compo
 
 export default function ContactPanel() {
   return (
-    <div className="scrollbar scroll-smooth overflow-y-auto flex-1 h-full flex flex-col gap-4 items-center">
+    <div className="scrollbar scroll-smooth overflow-y-auto flex-1 flex flex-col gap-4 items-center">
       <Header />
       <Divider />
       <Socials />

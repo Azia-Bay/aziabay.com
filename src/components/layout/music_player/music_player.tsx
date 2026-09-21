@@ -201,34 +201,38 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="self-start ml-7 mt-5 mb-10 flex flex-col">
+    <div className="max-lg:self-center lg:self-start lg:ml-7 max-lg:mt-16 lg:mt-5 lg:mb-10 flex flex-col -max-lg:gap-1">
       <audio ref={audioRef} src={src} loop />
 
-      <div className="flex flex-row items-center">
-        <button onClick={togglePlay} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-          {play_button_src && <Image src={play_button_src} alt={isPlaying ? "A pixel art icon of a pause button." : "A pixel art icon of a play button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
-        </button>
+      <div className="flex max-sm:flex-col sm:flex-row items-center">
+        <div className="max-sm:-ml-4 flex flex-row items-center">
+          <button onClick={togglePlay} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
+            {play_button_src && <Image src={play_button_src} alt={isPlaying ? "A pixel art icon of a pause button." : "A pixel art icon of a play button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+          </button>
 
-        <div className="overflow-clip flex-1 min-w-60 ml-2 -mt-6 flex flex-col">
-          <div className={`${isPlaying ? "marquee" : ""} h-6`}>
-            <span>{title}</span>
-          </div>
-          
-          <div ref={barRef} onMouseDown={handleSeek} className="cursor-pointer h-6 rounded-lg border-4 border-foreground border-double bg-background">
-            <div className="h-full bg-foreground" style={{ width: `${progress}%` }} />
+          <div className="overflow-clip flex-1 min-w-60 ml-2 -mt-6 flex flex-col">
+            <div className={`${isPlaying ? "marquee" : ""} h-6`}>
+              <span>{title}</span>
+            </div>
+            
+            <div ref={barRef} onMouseDown={handleSeek} className="cursor-pointer h-6 rounded-lg border-4 border-foreground border-double bg-background">
+              <div className="h-full bg-foreground" style={{ width: `${progress}%` }} />
+            </div>
           </div>
         </div>
 
-        <div className="ml-4 text-sm w-20">
+        <div className="lg:ml-4 mx-4 text-sm">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
 
-        <button onClick={toggleMute} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
-          {volume_button_src && <Image src={volume_button_src} alt={!muted ? "A pixel art icon of a volume button." : "A pixel art icon of a volume mute button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
-        </button>
+        <div className="max-sm:-ml-4 max-sm:mt-3 flex flex-row items-center">
+          <button onClick={toggleMute} className="cursor-pointer p-2 hover:scale-125 transition-transform duration-300 ease-out">
+            {volume_button_src && <Image src={volume_button_src} alt={!muted ? "A pixel art icon of a volume button." : "A pixel art icon of a volume mute button."} className="pixelated" width={16} height={16} unoptimized loading="eager" />}
+          </button>
 
-        <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer w-15 h-4 rounded-full border-4 border-foreground border-double bg-background">
-          <div className="h-full rounded-full bg-foreground" style={{ width: `${volume * 100}%` }} />
+          <div ref={volumeBarRef} onMouseDown={handleVolumeChange} className="cursor-pointer max-sm:w-30 sm:w-15 h-4 rounded-full border-4 border-foreground border-double bg-background">
+            <div className="h-full rounded-full bg-foreground" style={{ width: `${volume * 100}%` }} />
+          </div>
         </div>
       </div>
     </div>

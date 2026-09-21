@@ -15,7 +15,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form action={submit} className="w-100 flex flex-col gap-4">
+    <form action={submit} className="w-100 max-w-full flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <input name="name" type="text" placeholder="Name" required className="cursor-text px-2 py-1 rounded-lg border-4 border-dark border-double bg-light text-dark" />
 

@@ -19,10 +19,10 @@ type ContentProps = {
 
 export default function Content({ tab, onTabChange }: ContentProps) {
   return (
-    <div className="flex-1 min-h-0 pl-5 pt-10 pb-5 flex flex-col">
+    <div id="content" className="flex-1 max-lg:min-h-screen lg:min-h-0 max-lg:max-h-screen pl-5 max-lg:pr-5 pt-10 pb-5 flex flex-col">
       <Tabs tab={tab} onTabChange={onTabChange} />
 
-      <main className="flex-1 h-full min-h-0 max-w-full max-h-full p-5 rounded-lg border-4 border-foreground border-double">
+      <main className="flex-1 h-full min-h-0 max-w-full max-h-full p-5 rounded-lg border-4 border-foreground border-double flex">
         {tab === "games" && <GamesPanel onTabChange={onTabChange} />}
         {tab === "blog" && <BlogPanel onTabChange={onTabChange} />}
         {tab === "resume" && <ResumePanel />}

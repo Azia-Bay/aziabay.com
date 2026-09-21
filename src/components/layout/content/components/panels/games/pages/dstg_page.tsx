@@ -86,7 +86,7 @@ export default function DSTGPage() {
 
   return (
     <div
-      className="scrollbar scroll-smooth overflow-y-auto min-w-0 h-full min-h-0 pr-4 flex flex-col gap-6">
+      className="scrollbar scroll-smooth overflow-y-auto min-w-0 min-h-0 pr-4 flex flex-col gap-6">
       <div
         id="teaser"
         className="self-center rounded-lg border-double border-4 border-foreground">
