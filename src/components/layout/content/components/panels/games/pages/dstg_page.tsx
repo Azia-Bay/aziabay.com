@@ -1,6 +1,6 @@
 "use client";
 
-import { AUTHOR_NAME } from "@/lib/consts";
+import { SITE_AUTHOR } from "@/lib/consts";
 
 import { useModal } from "@/lib/modal_context";
 
@@ -245,7 +245,7 @@ export default function DSTGPage() {
                   {credit.names.map((credit, jndex) => {
                     return <div key={jndex}>
                       <div
-                        className={credit === AUTHOR_NAME ? "italic" : ""}>
+                        className={credit === SITE_AUTHOR ? "italic" : ""}>
                         {credit}
                       </div>
                     </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { Philosopher } from "next/font/google";
 
-import { SITE_NAME } from "@/lib/consts";
+import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/consts";
 
 import Providers from "@/lib/providers"
 import FogReveal from "@/components/layout/fog_reveal";
@@ -11,7 +11,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
-  description: ""
+  description: SITE_DESCRIPTION
 };
 
 const philosopher = Philosopher({

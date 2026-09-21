@@ -1,20 +1,21 @@
 import { Social } from "@/lib/types";
 
 export const SITE_NAME = "AZIABAY";
-export const AUTHOR_NAME = "Azia Bay-Asen";
+export const SITE_AUTHOR = "Azia Bay-Asen";
+export const SITE_DESCRIPTION = "";
 
 export const DEFAULT_TAB = "games";
 
 export const THEME_MUSIC = "music/late_night_radio.mp3";
 export const THEME_MUSIC_DISPLAY_TEXT = "Late Night Radio by Kevin Macleod";
 
+export const LINK_TO_SITE_SOURCE = "https://github.com/Azia-Bay/aziabay.com";
+
 export const LINK_TO_LINKEDIN = "https://www.linkedin.com/in/aziabay/";
 export const LINK_TO_GITHUB = "https://github.com/Azia-Bay";
 export const LINK_TO_REDDIT = "https://www.reddit.com/user/AziaBay/";
 export const LINK_TO_ITCHIO = "https://aziabay.itch.io/";
 export const LINK_TO_TUMBLR = "https://www.tumblr.com/aziabay";
-
-export const LINK_TO_SITE_SOURCE = "https://github.com/Azia-Bay/aziabay.com";
 
 export const SOCIALS: Social[] = [
   {
