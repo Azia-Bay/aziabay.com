@@ -36,7 +36,7 @@ export default function ContentTab({ onClick, children }: ContentTabProps) {
           </span>
 
           <HoveredUnderline
-            bottom="0"
+            bottom="bottom-0"
             isHovered={isHovered} />
         </span>
       }

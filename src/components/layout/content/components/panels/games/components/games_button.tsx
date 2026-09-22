@@ -65,7 +65,10 @@ export default function GamesButton({ onClick, state, date, title, tagline, genr
             {title}
           </div>
 
-          <HoveredUnderline origin="left" bottom="0.5" h="0.5" />
+          <HoveredUnderline
+            origin="origin-left"
+            bottom="bottom-0.5"
+            h="h-0.5" />
         </div>
 
         <div
@@ -95,9 +98,9 @@ export default function GamesButton({ onClick, state, date, title, tagline, genr
         onClick={() => openModal(
           `${title} thumbnail`,
           <Image
-            className="object-contain pixelated"
             src={src}
             alt={alt}
+            className="object-contain pixelated"
             fill
             unoptimized />
           )}
