@@ -49,21 +49,29 @@ import Socials from "@/components/layout/socials/socials";
   -----------
   React
   -----
-  • How to Decide When to Use "use client": https://dev.to/tjcoding/how-to-decide-when-to-use-use-client-2dci
+  • How to Decide When to Use "use client":
+    https://dev.to/tjcoding/how-to-decide-when-to-use-use-client-2dci
 
   Tailwind
   --------
-  • Tailwind CSS v4 Cheat Sheet: https://www.creative-tim.com/twcomponents/cheatsheet/tailwind-css-4
-  • Automatically add display flex when flex-col or flex-row class is added #8665: https://github.com/tailwindlabs/tailwindcss/discussions/8665
-  • Beyond String Interpolation: Safe Approaches for Dynamic Colors in Tailwind CSS: https://iifx.dev/en/articles/456576345/beyond-string-interpolation-safe-approaches-for-dynamic-colors-in-tailwind-css
+  • Tailwind CSS v4 Cheat Sheet:
+    https://www.creative-tim.com/twcomponents/cheatsheet/tailwind-css-4
+  
+  • Automatically add display flex when flex-col or flex-row class is added:
+    https://github.com/tailwindlabs/tailwindcss/discussions/8665
+  
+  • Beyond String Interpolation: Safe Approaches for Dynamic Colors in Tailwind CSS:
+    https://iifx.dev/en/articles/456576345/beyond-string-interpolation-safe-approaches-for-dynamic-colors-in-tailwind-css
 
   next-themes
   -----------
-  • [Bug]: Script tag while rendering React component. #387: https://github.com/pacocoursey/next-themes/issues/387
+  • [Bug] Script tag while rendering React component:
+    https://github.com/pacocoursey/next-themes/issues/387
 
   Resend
   ------
-  • Send emails with Next.js: https://resend.com/docs/send-with-nextjs
+  • Send emails with Next.js:
+    https://resend.com/docs/send-with-nextjs
 */
 
 export default function Home() {

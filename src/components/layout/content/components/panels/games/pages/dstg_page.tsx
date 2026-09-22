@@ -1,10 +1,12 @@
 "use client";
 
-import { SITE_AUTHOR } from "@/lib/consts";
+import Image from "next/image";
 
+import { SITE_AUTHOR } from "@/lib/consts";
 import { useModal } from "@/lib/modal_context";
 
-import Image from "next/image";
+import HoveredDither from "@/components/vfx/hovered_dither";
+import HoveredUnderline from "@/components/vfx/hovered_underline";
 
 const TITLE = "Don't Start the Game";
 
@@ -86,10 +88,10 @@ export default function DSTGPage() {
 
   return (
     <div
-      className="scrollbar scroll-smooth overflow-y-auto min-w-0 min-h-0 pr-4 flex flex-col gap-6">
+      className="scrollbar scroll-smooth overflow-y-auto min-h-0 pr-4 flex flex-col gap-6">
       <div
         id="teaser"
-        className="self-center rounded-lg border-double border-4 border-foreground">
+        className="self-center rounded-lg border-4 border-foreground border-double">
         <video
           controls
           preload="metadata"
@@ -107,20 +109,18 @@ export default function DSTGPage() {
         href={LINK}
         target="_blank"
         className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground">
-        <span
-          className="absolute inset-0 translate-y-full group-hover:translate-y-3/4 transition-transform duration-200 ease-out pixelated bg-size-[2px_2px] bg-[repeating-conic-gradient(var(--dark)_0%_25%,transparent_25%_50%)]" />
+          <HoveredDither />
 
         <div
           className="relative z-10 text-background text-2xl font-bold uppercase">
           Play free on itch.io
 
-          <span
-            className="absolute left-0 bottom-0.5 w-full h-0.5 bg-background scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+          <HoveredUnderline bottom="bottom-0.5" h="h-0.5" bgColor="bg-background" />
         </div>
       </a>
 
       <div
-        className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:gap-4 xl:grid xl:grid-cols-2 xl:gap-4">
+        className="max-xl:flex max-xl:flex-col max-xl:items-center gap-4 xl:grid xl:grid-cols-2 xl:gap-4">
         <div
           id="description"
           className="max-xl:w-fit mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
@@ -134,8 +134,7 @@ export default function DSTGPage() {
               className="relative text-2xl font-bold">
               {TITLE}
 
-              <span
-                className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+              <HoveredUnderline bottom="bottom-0" h="h-0.5" />
             </h1>
           </a>
 
@@ -144,7 +143,9 @@ export default function DSTGPage() {
             {DESCRIPTION}
           </p>
 
-          <i>{STATUS} {DATE}</i>
+          <i>
+            {STATUS} {DATE}
+          </i>
 
           <div
             className="flex flex-row gap-1.5">
@@ -160,7 +161,7 @@ export default function DSTGPage() {
 
         <div
           id="reviews"
-          className="mb-auto flex flex-col max-xl:items-center max-xl:gap-2 xl:gap-4">
+          className="mb-auto flex flex-col max-xl:items-center gap-2 xl:gap-4">
           {REVIEWS.map((review, index) => {
             return <div
               key={index}
@@ -170,8 +171,8 @@ export default function DSTGPage() {
 
               <div
                 className="text-xl text-justify">
-                  {review.quote}
-                </div>
+                {review.quote}
+              </div>
               
               <div
                 className="ml-4 text-sm">
@@ -184,7 +185,7 @@ export default function DSTGPage() {
 
       <div
         id="screenshots"
-        className="mx-4 max-xl:flex max-xl:flex-col max-xl:items-center max-xl:gap-4 xl:grid xl:grid-cols-2 xl:gap-6">
+        className="mx-4 max-xl:flex max-xl:flex-col max-xl:items-center gap-4 xl:grid xl:grid-cols-2 xl:gap-6">
         {SCREENSHOTS.map((screenshot, index) => {
           return <button
             key={index}
@@ -192,18 +193,18 @@ export default function DSTGPage() {
               () => openModal(
                 `${TITLE} screenshot ${index + 1}`,
                 <Image
-                  className="object-contain pixelated"
                   src={screenshot.src}
                   alt={screenshot.alt}
+                  className="object-contain pixelated"
                   fill
                   unoptimized />
               )
             }
             className="cursor-pointer group">
             <Image
-              className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated"
               src={screenshot.src}
               alt={screenshot.alt}
+              className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 ease-out pixelated"
               width={0}
               height={0}
               unoptimized />
@@ -211,7 +212,8 @@ export default function DSTGPage() {
         })}
       </div>
 
-      <div className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:gap-2 xl:grid xl:grid-cols-2 xl:gap-4">
+      <div
+        className="max-xl:flex max-xl:flex-col max-xl:items-center gap-2 xl:grid xl:grid-cols-2 xl:gap-4">
         <div
           id="credits"
           className="max-xl:w-fit mb-auto p-12 pt-8 border-4 border-dark bg-light text-dark flex flex-col gap-6">
@@ -221,29 +223,30 @@ export default function DSTGPage() {
           <a
             href="#credits"
             className="cursor-pointer group self-center">
-            <h1 className="relative text-2xl font-bold">
+            <h1
+              className="relative text-2xl font-bold">
               Credits
 
-              <span
-                className="absolute left-0 bottom-0 w-full h-0.5 bg-dark scale-x-0 group-hover:scale-x-100 transition-transform duration-150 ease-out" />
+              <HoveredUnderline bottom="bottom-0" h="h-0.5" />
             </h1>
           </a>
 
           <div
-            className="flex flex-col max-sm:gap-4 sm:gap-2">
+            className="flex flex-col gap-4 sm:gap-2">
             {CREDITS.map((credit, index) => {
               return <div
                 key={index}
-                className="max-sm:flex max-sm:flex-col items-center sm:grid sm:grid-cols-2 max-sm:gap-2 sm:gap-8">
+                className="max-sm:flex max-sm:flex-col items-center gap-2 sm:grid sm:grid-cols-2 sm:gap-8">
                 <h3
-                  className="max-sm:text-center sm:text-end text-xl">
+                  className="text-center sm:text-end text-xl">
                   {credit.category}
                 </h3>
 
                 <div
                   className="flex flex-col max-sm:items-center">
                   {credit.names.map((credit, jndex) => {
-                    return <div key={jndex}>
+                    return <div
+                      key={jndex}>
                       <div
                         className={credit === SITE_AUTHOR ? "italic" : ""}>
                         {credit}
