@@ -9,9 +9,36 @@ import Image from "next/image";
 
 import { useTheme } from "@teispace/next-themes";
 
+class Frame {
+  public src: string;
+  public src_light: string;
+  public alt: string;
+
+  constructor(src: string, src_light: string, alt: string) {
+    this.src = src;
+    this.src_light = src_light;
+    this.alt = alt;
+  }
+};
+
+const FRAMES = [
+  new Frame(
+    "sidebar/headshot.gif",
+    "sidebar/headshot_light.gif",
+    "A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses. A dialogue box reads: 'Hello, wanderer. Looking for something?'"
+  ),
+  new Frame(
+    "sidebar/headshot_2.gif",
+    "sidebar/headshot_2_light.gif",
+    "A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses. A dialogue box reads: 'Don't you have anything better to do?'"
+  )
+];
+
 export default function SidebarHeader() {
   const [mounted, setMounted] = useState(false);
+
   const [isEyeIconHovered, setIsEyeIconHovered] = useState(false);
+  const [frameIndex, setFrameIndex] = useState(0);
   
   const { theme } = useTheme();
 
@@ -57,15 +84,19 @@ export default function SidebarHeader() {
         </a>
       </div>
 
-      <Image
-        className="cursor-pointer w-full rounded-lg border-4 border-foreground border-double pixelated"
-        src={theme === "dark" ? "sidebar/headshot.gif" :
-                                "sidebar/headshot_light.gif"}
-        alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses."
-        width={0}
-        height={0}
-        unoptimized
-        loading="eager" />
+      <button
+        onClick={() => setFrameIndex((frameIndex + 1) % FRAMES.length)}
+        className="cursor-pointer rounded-lg border-4 border-foreground border-double">
+        <Image
+          className="w-full h-auto rounded-lg pixelated"
+          src={theme === "dark" ? FRAMES[frameIndex].src :
+                                  FRAMES[frameIndex].src_light}
+          alt={FRAMES[frameIndex].alt}
+          width={0}
+          height={0}
+          unoptimized
+          loading="eager" />
+      </button>
     </div>
   );
 }
