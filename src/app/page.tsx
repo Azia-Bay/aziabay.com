@@ -55,6 +55,7 @@ import Socials from "@/components/layout/socials/socials";
   --------
   • Tailwind CSS v4 Cheat Sheet: https://www.creative-tim.com/twcomponents/cheatsheet/tailwind-css-4
   • Automatically add display flex when flex-col or flex-row class is added #8665: https://github.com/tailwindlabs/tailwindcss/discussions/8665
+  • Beyond String Interpolation: Safe Approaches for Dynamic Colors in Tailwind CSS: https://iifx.dev/en/articles/456576345/beyond-string-interpolation-safe-approaches-for-dynamic-colors-in-tailwind-css
 
   next-themes
   -----------
