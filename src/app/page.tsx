@@ -56,6 +56,9 @@ import Socials from "@/components/layout/socials/socials";
   --------
   • Tailwind CSS v4 Cheat Sheet:
     https://www.creative-tim.com/twcomponents/cheatsheet/tailwind-css-4
+
+  • Responsive design:
+    https://tailwindcss.com/docs/responsive-design
   
   • Automatically add display flex when flex-col or flex-row class is added:
     https://github.com/tailwindlabs/tailwindcss/discussions/8665
