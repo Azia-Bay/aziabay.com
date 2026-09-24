@@ -66,9 +66,9 @@ export default function AziabayPage() {
         alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's."
         title="The Creation of aziabay.com"
         shields={[
-          new Shield("published", "9/23/2026"),
-          new Shield("words", 200),
-          new Shield("length", `${Math.ceil(200 / 238)} min. read`)]} />
+          new Shield("published", "9/24/2026"),
+          new Shield("words", 1864),
+          new Shield("length", `${Math.ceil(1864 / 238)} min. read`)]} />
 
       <div
         className="flex-1 w-full px-10 flex flex-col gap-10">
