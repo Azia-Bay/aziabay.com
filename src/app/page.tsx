@@ -29,7 +29,7 @@ CAUTION: DO NOT REMOVE. Load-bearing eye.
 
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -80,6 +80,14 @@ import Socials from "@/components/layout/socials/socials";
 */
 
 export default function Home() {
+  return (
+    <Suspense fallback={null}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
