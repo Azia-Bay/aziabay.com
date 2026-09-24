@@ -60,7 +60,7 @@ export default function AziabayPage() {
 
   return (
     <div
-      className="scrollbar scroll-smooth overflow-y-auto w-full min-w-3/4 min-h-0 mx-auto rounded-lg border-4 border-dark border-double flex flex-col items-center gap-10 bg-light text-dark">
+      className="scrollbar scroll-smooth overflow-y-auto w-full min-w-3/4 min-h-0 mx-auto pb-16 rounded-lg border-4 border-dark border-double flex flex-col items-center gap-10 bg-light text-dark">
       <Banner
         src="content/panels/blog/pages/aziabay/banner.png"
         alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's."
@@ -464,6 +464,13 @@ export default function AziabayPage() {
           <Section
             id="conclusion"
             title="Conclusion">
+            <Subsection
+              id="end"
+              title="In the end ...">
+              <Paragraph>
+                I am glad that I worked on <Link href="/">aziabay.com</Link>. Redesigning the website was a month-long project, and a transition from using pure HTML, CSS, and JavaScript to using the React-based framework Next.js. I feel like I learned a lot—not just about web development, but about taste—or designing the kind of website that is pleasing to me and makes me happy to call my own.
+              </Paragraph>
+            </Subsection>
           </Section>
         </div>
       </div>
