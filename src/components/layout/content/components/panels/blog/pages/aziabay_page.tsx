@@ -5,6 +5,8 @@ import HoveredUnderline from "@/components/vfx/hovered_underline";
 import Banner, { Shield } from "../components/blog_banner";
 import Section from "../components/blog_section";
 import Subsection from "../components/blog_subsection";
+import Paragraph from "../components/blog_paragraph";
+import Link from "../components/blog_link";
 import Image from "../components/blog_image";
 
 class Tech {
@@ -112,7 +114,6 @@ export default function AziabayPage() {
 
         <div
           className="flex flex-row gap-10">
-
           <Section
             id="summary"
             title="Summary">
@@ -121,95 +122,93 @@ export default function AziabayPage() {
               <Subsection
                 id="history"
                 title="A Brief History">
-                <div
-                  className="text-justify text-lg">
-                  <p>
+                <div>
+                  <Paragraph>
                     During the summer of 2022, I was approaching my second year at the University of Texas at Dallas as a computer science major, and got the idea in my head to create my own website.
-                  </p>
+                  </Paragraph>
 
-                  <p>
+                  <Paragraph>
                     &emsp;Like many other rats in the great, big race, I had been comparing myself to <i>the elite</i> at my college. No, not the elite in terms of the students with the most family wealth. Instead, I am talking about the students who had perfect grade point averages, leadership positions in the largest student clubs, and summer internships lined up for top tech companies.
-                  </p>
+                  </Paragraph>
 
-                  <p>
+                  <Paragraph>
                     &emsp;One of these students was Francis Masangcay, the Co-Director of the Association for Computing Machinery at the University of Texas at Dallas—the largest computer science organization at our college—and previous software engineering intern at Amazon Web Services (AWS).
-                  </p>
+                  </Paragraph>
 
-                  <p>
-                    &emsp;Francis had his own personal website—<a href="https://francis-masangcay.dev/" target="_blank" className="cursor-pointer underline">francis-masangcay.dev</a>—and in my effort to emulate others and their success, I wanted my own. In the summer of 2022, <a href="/" target="_blank" className="cursor-pointer underline">aziabay.com</a> was born, bright and shiny and new.
-                  </p>
+                  <Paragraph>
+                    &emsp;Francis had his own personal website—<Link href="https://francis-masangcay.dev/">francis-masangcay.dev</Link>—and in my effort to emulate others and their success, I wanted my own. In the summer of 2022, <Link href="/">aziabay.com</Link> was born, bright and shiny and new.
+                  </Paragraph>
                 </div>
               </Subsection>
 
               <Subsection
                 id="wait"
                 title="Wait, 2022? This blog was published in 2026!">
-                <div
-                  className="text-justify text-lg">
-                  <p>
+                <div>
+                  <Paragraph>
                     When this website released in 2022, it looked something like this:
-                  </p>
+                  </Paragraph>
 
                   <Image
                     title="Design 1"
                     src="/content/panels/blog/pages/aziabay/design_1.png"
                     alt="" />
 
-                  <p>
+                  <Paragraph>
                     Then, I changed things up and made it look like this:
-                  </p>
+                  </Paragraph>
 
                   <Image
                     title="Design 2"
                     src="/content/panels/blog/pages/aziabay/design_2.png"
                     alt="" />
 
-                  <p>
+                  <Paragraph>
                     Then this:
-                  </p>
+                  </Paragraph>
 
                   <Image
                     title="Design 3"
                     src="/content/panels/blog/pages/aziabay/design_3.png"
                     alt="" />
 
-                  <p>
+                  <Paragraph>
                     Experimented with this:
-                  </p>
+                  </Paragraph>
 
                   <Image
                     title="Design 4"
                     src="/content/panels/blog/pages/aziabay/design_4.png"
                     alt="" />
 
-                  <p>
+                  <Paragraph>
                     In 2024, landed on this:
-                  </p>
+                  </Paragraph>
 
                   <Image
                     title="Design 5"
                     src="/content/panels/blog/pages/aziabay/design_5.png"
                     alt="" />
 
-                  <p>
+                  <Paragraph>
                     Needless to say, I am incredibly indecisive.
-                  </p>
+                  </Paragraph>
 
-                  <p>
-                    &emsp;Although this blog page purports to examine the creation of <a href="/" target="_blank" className="cursor-pointer underline">aziabay.com</a>, what it really examines is the redesign of <a href="/" target="_blank" className="cursor-pointer underline">aziabay.com</a> in 2026, which is hopefully the design you are seeing right now, unless my indecisiveness gets the best of me yet again.
-                  </p>
+                  <Paragraph>
+                    &emsp;Although this blog page purports to examine the creation of <Link href="/">aziabay.com</Link>, what it really examines is the redesign of <Link href="/">aziabay.com</Link> in 2026, which is hopefully the design you are seeing right now, unless my indecisiveness gets the best of me yet again.
+                  </Paragraph>
 
-                  <p>
+                  <Paragraph>
                     &emsp;But I am getting ahead of myself.
-                  </p>
+                  </Paragraph>
 
-                  <p>
+                  <Paragraph>
                     &emsp;The reason that this website is being redesigned—and the reason for this blog—is that none of the designs above felt like me. Looking back at them now, I do not think any of them are bad, but I cannot help but see them as generic, and lacking any real signature that identifies them as something I made. Excluding, of course, my name printed in big, bold letters wherever the opportunity presents.
-                  </p>
+                  </Paragraph>
 
-                  <p>
-                    &emsp;I want my website to be more than a page I shove all the same information from my resume onto, and more than a url to direct recruiters to during job hunting season. I want my website to be made for me. And so, this is the <i>rebirth</i> of <a href="/" target="_blank" className="cursor-pointer underline">aziabay.com</a>, redesigned for 2026, and years to come.
-                  </p>
+                  <Paragraph>
+                    &emsp;I want my website to be more than a page I shove all the same information from my resume onto, and more than a url to direct recruiters to during job hunting season. I want my website to be made for me. And so, this is the <i>rebirth</i> of <Link href="/">aziabay.com</Link>, redesigned for 2026, and years to come.
+                  </Paragraph>
                 </div>
               </Subsection>
             </div>
@@ -245,28 +244,96 @@ export default function AziabayPage() {
           </Section>
         </div>
 
-        <Section
-          id="design"
-          title="Design">
-          <Subsection
-            id="exploration"
-            title="Exploration">
-          </Subsection>
-          
-          <Subsection
-            id="aesthetic"
-            title="Aesthetic">
-          </Subsection>
-        </Section>
+        <div
+          className="flex flex-row gap-10">
+          <Section
+            id="design"
+            title="Design">
+            <Subsection
+              id="exploration"
+              title="Exploration">
+              <Paragraph>
+                Before jumping into the design phase, I explored different websites that I had visited in the past, enjoyed the look of, and bookmarked for future reference. For this design, my main inspirations were <Link href="https://trawlix.art/">trawlix.art</Link> and <Link href="https://www.bossypino.com/">bossypino.com</Link>.
+              </Paragraph>
+              
+              <Image
+                title="trawlix.art"
+                src="/content/panels/blog/pages/aziabay/inspiration_1.png"
+                alt="" />
+              
+              <Paragraph>
+                Tina is one of the artists of <i>METAMORPHOSIS</i> and the creator of <Link href="https://trawlix.art/">trawlix.art</Link>.
+              </Paragraph>
 
-        <Section
-          id="art"
-          title="Custom Art">
-        </Section>
+              <Paragraph>
+                &emsp;The main thing that I love about their website is its commitment to high contrast, stylized, black and white design. What some might call an eye strain, or waste of modern computer graphics, is to me my bread and butter. I enjoy the striking complement of full dark and full light. I enjoy working in limitations. There is no need to spell out how I incorporated this into my design.
+              </Paragraph>
+              
+              <Image
+                title="bossypino.com"
+                src="/content/panels/blog/pages/aziabay/inspiration_2.png"
+                alt="" />
+
+              <Paragraph>
+                Bossy is the sole developer of <i>Muffles' Life Sentence</i> and the creator of <Link href="https://www.bossypino.com/">bossypino.com</Link>.
+              </Paragraph>
+
+              <Paragraph>
+                &emsp;From his website, I borrowed the blog section. Some developers have blogs, but many of them are inactive, and often seemed to me like a waste of space, or otherwise unnecessary feature to have on my own website. Bossy, on the other hand, publishes a new blog post every month, many of which are insightful and worth reading, and reignited my attraction to the developer log.
+              </Paragraph>
+            </Subsection>
+            
+            <Subsection
+              id="aesthetic"
+              title="Aesthetic">
+              <Paragraph>
+                I made two commitments in the aesthetic: 1) the entire website must only use pixel art, and 2) the entire website must only use black and white. I wanted my design to be as intentional as possible.
+              </Paragraph>
+            </Subsection>
+
+            <Subsection
+              id="exceptions"
+              title="Exceptions">
+              <Paragraph>
+                There are some exceptions to these rules. Although every banner and icon is an asset created by me in pixelated black and white, I did not modify external assets. For example, I did not alter the above screenshot of Bossy's website, even though it uses far more than two colors.
+              </Paragraph>
+            </Subsection>
+            
+            <Subsection
+              id="dithering"
+              title="Dithering">
+              <Paragraph>
+                The difficulty in sticking to these rules comes from working around standard expectations for user experience with only two colors.
+              </Paragraph>
+
+              <Paragraph>
+                &emsp;When you hover your mouse over a button, you expect the button to become darker, or otherwise provide some visual indication that it can be clicked. How can I make a white button darker without abruptly painting it black? Gray is inbetween white and black, but making the button gray would go against rule two, and is somewhat of a cheat.
+              </Paragraph>
+
+              <Paragraph>
+                &emsp;The answer is dithering, or applying a dithering effect to everywhere an inbetween tone is needed. You can see this when hovering over any tab and most buttons on this website.
+              </Paragraph>
+
+              <Paragraph>
+                &emsp;Using a Bayer matrix, dithering is also applied across the entire screen when the website is loaded in, making it seem like the website is gradually fading into view from total darkness, even though only two colors are ever used.
+              </Paragraph>
+            </Subsection>
+          </Section>
+
+          <Section
+            id="art"
+            title="Custom Art">
+          </Section>
+        </div>
 
         <Section
           id="polish"
           title="Polish">
+          <Subsection
+            id="loading"
+            title="Loading Animation">
+          </Subsection>
+
           <Subsection
             id="cursor"
             title="Custom Cursor">
@@ -274,7 +341,7 @@ export default function AziabayPage() {
 
           <Subsection
             id="eye"
-            title="Eye">
+            title="Blinking Eye">
           </Subsection>
 
           <Subsection
