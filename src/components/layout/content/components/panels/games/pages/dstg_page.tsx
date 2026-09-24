@@ -112,7 +112,7 @@ export default function DSTGPage() {
         <HoveredDither />
 
         <div
-          className="relative z-10 text-background text-2xl font-bold uppercase">
+          className="relative z-10 text-background text-center text-2xl font-bold uppercase">
           Play free on itch.io
 
           <HoveredUnderline
