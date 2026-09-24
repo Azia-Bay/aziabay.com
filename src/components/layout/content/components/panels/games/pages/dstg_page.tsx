@@ -108,14 +108,17 @@ export default function DSTGPage() {
         id="play-button"
         href={LINK}
         target="_blank"
-        className="cursor-pointer self-center relative group overflow-hidden min-h-fit px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground">
-          <HoveredDither />
+        className="cursor-pointer self-center relative group overflow-hidden min-h-16 px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground flex items-center">
+        <HoveredDither />
 
         <div
           className="relative z-10 text-background text-2xl font-bold uppercase">
           Play free on itch.io
 
-          <HoveredUnderline bottom="bottom-0.5" h="h-0.5" bgColor="bg-background" />
+          <HoveredUnderline
+            bottom="bottom-0.5"
+            h="h-0.5"
+            bgColor="bg-background" />
         </div>
       </a>
 
