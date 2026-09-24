@@ -294,7 +294,7 @@ export default function AziabayPage() {
               id="exceptions"
               title="Exceptions">
               <Paragraph>
-                There are some exceptions to these rules. Although every banner and icon is an asset created by me in pixelated black and white, I did not modify external assets. For example, I did not alter the above screenshot of Bossy's website, even though it uses far more than two colors.
+                There are some exceptions to these rules. Although every banner and icon is an asset created by me in pixelated black and white, I did not modify external assets. For example, I did not alter the above screenshot of Bossy's website, even though it uses more than two colors.
               </Paragraph>
             </Subsection>
             
@@ -438,26 +438,176 @@ export default function AziabayPage() {
             <Subsection
               id="loading"
               title="Loading Animation">
+              <Paragraph>
+                I like loading animations as an extra layer of visual flair, even if they are technically bad for user experience, since accessing the website forces a brief, but unnecessary, delay.
+              </Paragraph>
+
+              <Paragraph>
+                &emsp;In my opinion, the delay is acceptable for a personal website. Unlike a social media site like Discord, or a site that functions as a tool, like GitHub, no one should be accessing this website frequently enough to be bothered by the delay.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/loading.gif"
+                alt=""
+                title="Loading Animation" />
+              
+              <Paragraph>
+                A fade-in effect is simple in theory, but made complicated by the inability to use transparency. I get around this with a 4x4 Bayer matrix:
+              </Paragraph>
+
+              <div
+                className="w-3/4 my-4 grid grid-rows-4 grid-cols-4 text-center">
+                <div>0</div>
+                <div>8</div>
+                <div>2</div>
+                <div>10</div>
+
+                <div>12</div>
+                <div>4</div>
+                <div>14</div>
+                <div>6</div>
+                
+                <div>3</div>
+                <div>11</div>
+                <div>1</div>
+                <div>9</div>
+                
+                <div>15</div>
+                <div>7</div>
+                <div>13</div>
+                <div>5</div>
+              </div>
+              
+              <Paragraph>
+                The matrix is patterned over the entire screen. You can think of the screen as being made of many of these 4x4 grids.
+              </Paragraph>
+              
+              <Paragraph>
+                &emsp;Notice how each cell in the grid contains a number, from 0 to 15. You can think of the loading animation as being a 16-frame animation, and each cell's number being its index threshold.
+              </Paragraph>
+              
+              <Paragraph>
+                &emsp;If the current animation index is at or below a cell's threshold, a black pixel is drawn at that cell. If the current animation index is above a cell's threshold, nothing is drawn at that cell.
+              </Paragraph>
+              
+              <Paragraph>
+                &emsp;This means that, at index 0, or the starting animation frame, every cell in every grid is painted black. At index 1, every cell excluding the top-left cell is black. At index 15, <i>only</i> the bottom-left cell is black. When the animation concludes, the entire screen is made visible.
+              </Paragraph>
             </Subsection>
 
             <Subsection
               id="cursor"
               title="Custom Cursor">
+              <Paragraph>
+                Taking a note from <i>Slay the Princess</i>—and its scaly, lizard hand cursor—I implemented a custom cursor in the form of a gloved hand, capable of holding various implements.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/cursor.png"
+                alt=""
+                title="Custom Cursor"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The default cursor is the gloved hand outstretched.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/cursor_pointer.png"
+                alt=""
+                title="Custom Cursor (Pointer)"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The pointer cursor—swapped to when hovering over buttons and other interactables—is the gloved hand pointing.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/cursor_text.png"
+                alt=""
+                title="Custom Cursor (Text)"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The text cursor—swapped to when hovering over text-based inputs, like the name field in the contact form—is the gloved hand holding a quill. To draw this one, I had to hold a pen in my hand, then realize that the direction of the quill being realistic matters less than it being readable.
+              </Paragraph>
             </Subsection>
 
             <Subsection
               id="eye"
               title="Blinking Eye">
+              <Paragraph>
+                When it came time to design the logo for my website, I knew I had to make it an eye. Really, there was just no other option. The eye is my favorite emoji to bother people with on Discord and other communication channels.
+              </Paragraph>
+
+              <Image
+                src="/content/panels/blog/pages/aziabay/icon.png"
+                alt=""
+                title="Eye Logo"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The default logo is the eye staring directly at the viewer.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/icon_closed.png"
+                alt=""
+                title="Closed Eye Logo"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                After I implemented the default logo, making it interactable felt like an obvious and necessary next step. When you hover over the eye with your mouse, the eye closes automatically, and reopens when the cursor moves away.
+              </Paragraph>
             </Subsection>
 
             <Subsection
               id="dialogue"
               title="Dialogue">
+              <Paragraph>
+                Making the dialogue panel interactable followed similar logic to making the eye logo interactable: If it looks interactable, then it must be. If it is not, then make it so.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/dialogue_1.gif"
+                alt=""
+                title="Dialogue 1"
+                pixelated />
+
+              <Paragraph>
+                Clicking on the panel advances the dialogue text, looping through a pool of different quotes. This website is launching with only two quotes in the pool, but I plan to add more as time goes on, and as I find or come up with suitable quotes.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/dialogue_2.gif"
+                alt=""
+                title="Dialogue 2"
+                pixelated />
+
+              <Paragraph>
+                The somewhat brash line "Don't you have anything better to do?" references the end of the <i>Undertale</i> Pacifist route.
+              </Paragraph>
             </Subsection>
 
             <Subsection
               id="music_player"
               title="Music Player">
+              <Paragraph>
+                I did not grow up using Myspace, but I can pretend I am a Millenial by adding a music player to my website, right?
+              </Paragraph>
+              
+              <Paragraph>
+                &emsp;Adding a music player was surprisingly involved because I needed it to be customizable, and fit the black and white aesthetic. To this end, the controls were built more or less from scratch.
+              </Paragraph>
+              
+              <Paragraph>
+                &emsp;The song I chose was "Late Night Radio" by Kevin Macleod, one of his many royalty-free releases. I wanted something I personally enjoyed listening to, but that was not overwhelming. Something you could relax and read a blog page to, for example. No hard rock.
+              </Paragraph>
             </Subsection>
           </Section>
 
