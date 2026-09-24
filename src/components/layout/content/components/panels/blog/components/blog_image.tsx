@@ -28,7 +28,7 @@ export default function BlogImage({ title, src, alt, maxW = "", pixelated = fals
             unoptimized />
         )
       }
-      className={`cursor-pointer relative group overflow-hidden w-3/4 ${maxW} flex items-center justify-center`}>
+      className={`cursor-pointer relative group overflow-hidden w-full xl:w-3/4 ${maxW} flex items-center justify-center`}>
       <Image
         src={src}
         alt={alt}

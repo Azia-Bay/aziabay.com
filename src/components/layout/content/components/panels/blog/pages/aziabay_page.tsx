@@ -60,7 +60,7 @@ export default function AziabayPage() {
 
   return (
     <div
-      className="scrollbar scroll-smooth overflow-y-auto w-full min-w-3/4 min-h-0 mx-auto pb-16 rounded-lg border-4 border-dark border-double flex flex-col items-center gap-10 bg-light text-dark">
+      className="scrollbar scroll-smooth overflow-y-auto min-h-0 pb-16 rounded-lg border-4 border-dark border-double flex flex-col items-center gap-10 bg-light text-dark">
       <Banner
         src="content/panels/blog/pages/aziabay/banner.png"
         alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's."
@@ -113,7 +113,7 @@ export default function AziabayPage() {
         </h1>
 
         <div
-          className="flex flex-row gap-10">
+          className="flex flex-col xl:flex-row gap-10">
           <Section
             id="summary"
             title="Summary">
@@ -244,7 +244,7 @@ export default function AziabayPage() {
         </div>
 
         <div
-          className="flex flex-row gap-10">
+          className="flex flex-col xl:flex-row gap-10">
           <Section
             id="design"
             title="Design">
@@ -431,7 +431,7 @@ export default function AziabayPage() {
         </div>
 
         <div
-          className="flex flex-row gap-10">
+          className="flex flex-col xl:flex-row gap-10">
           <Section
             id="polish"
             title="Polish">

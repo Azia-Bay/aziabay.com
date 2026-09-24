@@ -19,7 +19,7 @@ export default function BlogSubsection({ id, title, children }: BlogSubsectionPr
       id={id}>
       <button
         onClick={() => scrollTo(id)}
-        className="cursor-pointer">
+        className="cursor-pointer text-start">
         <h3
           className="relative group w-fit text-xl font-bold py-2">
           {title}

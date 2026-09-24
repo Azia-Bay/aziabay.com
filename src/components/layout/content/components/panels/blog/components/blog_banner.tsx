@@ -42,7 +42,7 @@ export default function BlogBanner({ src, alt, title, shields }: BlogBannerProps
       <Image
         src={src}
         alt={alt}
-        className="w-fit h-full max-w-none max-h-none group-hover:scale-125 transition-transform duration-300 ease-out pixelated"
+        className="absolute w-fit h-full max-w-none max-h-none group-hover:scale-125 transition-transform duration-300 ease-out pixelated"
         width={0}
         height={0}
         unoptimized />
