@@ -195,7 +195,7 @@ export default function AziabayPage() {
                   </Paragraph>
 
                   <Paragraph>
-                    &emsp;Although this blog page purports to examine the creation of <Link href="/">aziabay.com</Link>, what it really examines is the redesign of <Link href="/">aziabay.com</Link> in 2026, which is hopefully the design you are seeing right now, unless my indecisiveness gets the best of me yet again.
+                    &emsp;Although this blog page purports to examine the creation of <Link href="/">aziabay.com</Link>, what it really examines is the redesign of <Link href="/">aziabay.com</Link> in 2026, which is hopefully the design you are seeing right now, unless my indecisiveness got the best of me yet again.
                   </Paragraph>
 
                   <Paragraph>
@@ -216,8 +216,7 @@ export default function AziabayPage() {
 
           <Section
             id="tech-stack"
-            title="Tech Stack"
-            maxW="max-w-60">
+            title="Tech Stack">
             <div
               className="flex flex-col gap-4">
               {TECH.map((tech) => {
@@ -323,37 +322,150 @@ export default function AziabayPage() {
           <Section
             id="art"
             title="Custom Art">
+            <Subsection
+              id="custom"
+              title="Why custom?">
+              <Paragraph>
+                Using custom assets benefits aesthetic consistency and helps make the website feel more like my own.
+              </Paragraph>
+            </Subsection>
+
+            <Subsection
+              id="banners"
+              title="Banners">
+              <Paragraph>
+                I drew several banners strewn throughout the website.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/banner_1.png"
+                alt=""
+                title="Banner 1"
+                pixelated />
+              
+              <Paragraph>
+                This banner is used in the Contact tab, and as the banner for this blog post. It is based on <i>The Creation of Adam</i> by Michelangelo.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/banner_2.gif"
+                alt=""
+                title="Banner 2"
+                pixelated />
+              
+              <Paragraph>
+                This banner is used in the sidebar. It is based on a photograph of me in my university days.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/banner_3.png"
+                alt=""
+                title="Banner 3"
+                pixelated />
+              
+              <Paragraph>
+                This banner is also used in the sidebar. It is based on ionic columns from traditional Greek architecture, with design patterns from a culmination of references.
+              </Paragraph>
+            </Subsection>
+
+            <Subsection
+              id="icons"
+              title="Icons">
+              <Paragraph>
+                I drew all of the icons used in various buttons scattered across the website. The button icons for the four main tabs are animated.
+              </Paragraph>
+
+              <Image
+                src="/content/panels/blog/pages/aziabay/icon_games.gif"
+                alt=""
+                title="Games Icon"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The button icon for the Games tab is an old school arcade joystick controller.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/icon_blog.gif"
+                alt=""
+                title="Blog Icon"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The button icon for the Blog tab is a trumpet. It is reminiscent of medieval times, when heralds would use loud instruments to gather people's attention whenever they brought the news.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/icon_resume.gif"
+                alt=""
+                title="Resume Icon"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The button icon for the Resume tab is an anonymous resume. You should not put a photo of yourself on your resume anymore, but the detail helps visually identify the sprite as a resume.
+              </Paragraph>
+              
+              <Image
+                src="/content/panels/blog/pages/aziabay/icon_contact.gif"
+                alt=""
+                title="Contact Icon"
+                maxW="max-w-24"
+                pixelated />
+              
+              <Paragraph>
+                The button icon for the Contact tab is a sealed envelope. I enjoyed drawing the wax seal. I think it looks ornate.
+              </Paragraph>
+            </Subsection>
+
+            <Subsection
+              id="more"
+              title="And More">
+              <Paragraph>
+                Every other asset not explicitly created by someone else was also made by me, including the website's eye logo, the custom cursor sprites, the social media icons, and the music player button icons.
+              </Paragraph>
+            </Subsection>
           </Section>
         </div>
 
-        <Section
-          id="polish"
-          title="Polish">
-          <Subsection
-            id="loading"
-            title="Loading Animation">
-          </Subsection>
+        <div
+          className="flex flex-row gap-10">
+          <Section
+            id="polish"
+            title="Polish">
+            <Subsection
+              id="loading"
+              title="Loading Animation">
+            </Subsection>
 
-          <Subsection
-            id="cursor"
-            title="Custom Cursor">
-          </Subsection>
+            <Subsection
+              id="cursor"
+              title="Custom Cursor">
+            </Subsection>
 
-          <Subsection
-            id="eye"
-            title="Blinking Eye">
-          </Subsection>
+            <Subsection
+              id="eye"
+              title="Blinking Eye">
+            </Subsection>
 
-          <Subsection
-            id="dialogue"
-            title="Dialogue">
-          </Subsection>
+            <Subsection
+              id="dialogue"
+              title="Dialogue">
+            </Subsection>
 
-          <Subsection
-            id="music_player"
-            title="Music Player">
-          </Subsection>
-        </Section>
+            <Subsection
+              id="music_player"
+              title="Music Player">
+            </Subsection>
+          </Section>
+
+          <Section
+            id="conclusion"
+            title="Conclusion">
+          </Section>
+        </div>
       </div>
     </div>
   );

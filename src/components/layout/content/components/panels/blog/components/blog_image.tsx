@@ -8,10 +8,11 @@ type BlogImageProps = {
   title: string;
   src: string;
   alt: string;
+  maxW?: string;
   pixelated?: boolean;
 };
 
-export default function BlogImage({ title, src, alt, pixelated = false }: BlogImageProps) {
+export default function BlogImage({ title, src, alt, maxW = "", pixelated = false }: BlogImageProps) {
   const { openModal } = useModal()!;
 
   return (
@@ -27,7 +28,7 @@ export default function BlogImage({ title, src, alt, pixelated = false }: BlogIm
             unoptimized />
         )
       }
-      className="cursor-pointer relative group overflow-hidden w-3/4 flex items-center justify-center">
+      className={`cursor-pointer relative group overflow-hidden w-3/4 ${maxW} flex items-center justify-center`}>
       <Image
         src={src}
         alt={alt}
