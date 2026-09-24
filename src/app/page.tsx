@@ -31,6 +31,8 @@ CAUTION: DO NOT REMOVE. Load-bearing eye.
 
 import { useState } from "react";
 
+import { useRouter, useSearchParams } from "next/navigation";
+
 import { Tab } from "@/lib/types";
 
 import {
@@ -78,7 +80,13 @@ import Socials from "@/components/layout/socials/socials";
 */
 
 export default function Home() {
-  const [tab, setTab] = useState<Tab>(DEFAULT_TAB);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const [tab, setTab] = useState<Tab>(() => {
+    const param = searchParams.get("tab") as Tab | null;
+    return param ?? DEFAULT_TAB;
+  });
 
   function scrollToContent() {
     const content = document.getElementById("content");
@@ -88,6 +96,11 @@ export default function Home() {
   function onTabChange(tab: Tab) {
     setTab(tab);
     scrollToContent();
+
+    const params = new URLSearchParams(searchParams.toString());
+    
+    params.set("tab", tab);
+    router.replace(`?${params.toString()}`, { scroll: false });
   };
 
   return (
