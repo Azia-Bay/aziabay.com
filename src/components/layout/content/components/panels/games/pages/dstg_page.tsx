@@ -108,7 +108,7 @@ export default function DSTGPage() {
         id="play-button"
         href={LINK}
         target="_blank"
-        className="cursor-pointer self-center relative group overflow-hidden min-h-16 px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground flex items-center">
+        className="cursor-pointer self-center relative group overflow-hidden shrink-0 px-8 py-2 rounded-lg border-4 border-background border-double bg-foreground flex items-center">
         <HoveredDither />
 
         <div
