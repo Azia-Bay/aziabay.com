@@ -152,7 +152,7 @@ export default function AziabayPage() {
                   <Image
                     title="Design 1"
                     src="/content/panels/blog/pages/aziabay/design_1.png"
-                    alt="" />
+                    alt="Wireframes from a previous website design." />
 
                   <Paragraph>
                     Then, I changed things up and made it look like this:
@@ -161,7 +161,7 @@ export default function AziabayPage() {
                   <Image
                     title="Design 2"
                     src="/content/panels/blog/pages/aziabay/design_2.png"
-                    alt="" />
+                    alt="Wireframes from a previous website design." />
 
                   <Paragraph>
                     Then this:
@@ -170,7 +170,7 @@ export default function AziabayPage() {
                   <Image
                     title="Design 3"
                     src="/content/panels/blog/pages/aziabay/design_3.png"
-                    alt="" />
+                    alt="Screenshot from a previous website design." />
 
                   <Paragraph>
                     Experimented with this:
@@ -179,7 +179,7 @@ export default function AziabayPage() {
                   <Image
                     title="Design 4"
                     src="/content/panels/blog/pages/aziabay/design_4.png"
-                    alt="" />
+                    alt="Screenshot from a previous website design." />
 
                   <Paragraph>
                     In 2024, landed on this:
@@ -188,7 +188,7 @@ export default function AziabayPage() {
                   <Image
                     title="Design 5"
                     src="/content/panels/blog/pages/aziabay/design_5.png"
-                    alt="" />
+                    alt="Screenshot from a previous website design." />
 
                   <Paragraph>
                     Needless to say, I am incredibly indecisive.
@@ -258,7 +258,7 @@ export default function AziabayPage() {
               <Image
                 title="trawlix.art"
                 src="/content/panels/blog/pages/aziabay/inspiration_1.png"
-                alt="" />
+                alt="Screenshot of the trawlix.art website." />
               
               <Paragraph>
                 Tina is one of the artists of <i>METAMORPHOSIS</i> and the creator of <Link href="https://trawlix.art/">trawlix.art</Link>.
@@ -271,7 +271,7 @@ export default function AziabayPage() {
               <Image
                 title="bossypino.com"
                 src="/content/panels/blog/pages/aziabay/inspiration_2.png"
-                alt="" />
+                alt="Screenshot of the bossypino.com website." />
 
               <Paragraph>
                 Bossy is the sole developer of <i>Muffles' Life Sentence</i> and the creator of <Link href="https://www.bossypino.com/">bossypino.com</Link>.
@@ -339,7 +339,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/banner_1.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art banner of two arms reaching out to one other. The arms are reminiscent of the masterwork The Creation of Adam by Michelangelo, except both arms are identical, resembling Adam's and not God's."
                 title="Banner 1"
                 pixelated />
               
@@ -349,7 +349,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/banner_2.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses. A dialogue box reads: 'Hello, wanderer. Looking for something?'"
                 title="Banner 2"
                 pixelated />
               
@@ -359,7 +359,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/banner_3.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art banner of four pillars resembling ionic columns from traditional Greek architecture. The pillars are ornately detailed with juts and grooves and spiral ornaments."
                 title="Banner 3"
                 pixelated />
               
@@ -377,7 +377,7 @@ export default function AziabayPage() {
 
               <Image
                 src="/content/panels/blog/pages/aziabay/icon_games.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art icon of an old-school arcade joystick. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality."
                 title="Games Icon"
                 maxW="max-w-24"
                 pixelated />
@@ -388,7 +388,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/icon_blog.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art icon of a trumpet. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality."
                 title="Blog Icon"
                 maxW="max-w-24"
                 pixelated />
@@ -399,7 +399,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/icon_resume.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art icon of an anonymous resume. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality."
                 title="Resume Icon"
                 maxW="max-w-24"
                 pixelated />
@@ -410,7 +410,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/icon_contact.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art icon of an elegantly-sealed letter. It animatedly bounces up and down, with a shadow underneath adding three-dimensionality."
                 title="Contact Icon"
                 maxW="max-w-24"
                 pixelated />
@@ -448,7 +448,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/loading.gif"
-                alt=""
+                alt="Animated gif of the landing page fading in from black."
                 title="Loading Animation" />
               
               <Paragraph>
@@ -504,7 +504,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/cursor.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art gloved hand sprite, outstretched."
                 title="Custom Cursor"
                 maxW="max-w-24"
                 pixelated />
@@ -515,7 +515,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/cursor_pointer.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art gloved hand sprite, pointing."
                 title="Custom Cursor (Pointer)"
                 maxW="max-w-24"
                 pixelated />
@@ -526,7 +526,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/cursor_text.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art gloved hand sprite, holding a quill."
                 title="Custom Cursor (Text)"
                 maxW="max-w-24"
                 pixelated />
@@ -545,7 +545,7 @@ export default function AziabayPage() {
 
               <Image
                 src="/content/panels/blog/pages/aziabay/icon.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art icon of an eye, wide-open. The site logo."
                 title="Eye Logo"
                 maxW="max-w-24"
                 pixelated />
@@ -556,7 +556,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/icon_closed.png"
-                alt=""
+                alt="A 1-bit (black & white) pixel art icon of an eye, closed. The site logo."
                 title="Closed Eye Logo"
                 maxW="max-w-24"
                 pixelated />
@@ -575,7 +575,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/dialogue_1.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses. A dialogue box reads: 'Hello, wanderer. Looking for something?'"
                 title="Dialogue 1"
                 pixelated />
 
@@ -585,7 +585,7 @@ export default function AziabayPage() {
               
               <Image
                 src="/content/panels/blog/pages/aziabay/dialogue_2.gif"
-                alt=""
+                alt="A 1-bit (black & white) pixel art headshot of Azia Bay-Asen. He wears rectangular glasses. A dialogue box reads: 'Don't you have anything better to do?'"
                 title="Dialogue 2"
                 pixelated />
 
