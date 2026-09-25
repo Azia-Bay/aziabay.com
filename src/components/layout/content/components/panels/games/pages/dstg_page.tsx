@@ -142,7 +142,7 @@ export default function DSTGPage() {
           </a>
 
           <p
-            className="text-xl text-justify">
+            className="text-md text-justify">
             {DESCRIPTION}
           </p>
 
@@ -173,7 +173,7 @@ export default function DSTGPage() {
                 className="self-center w-6 h-6 mb-3 bg-dark rounded-full" />
 
               <div
-                className="text-xl text-justify">
+                className="text-md text-justify">
                 {review.quote}
               </div>
               
